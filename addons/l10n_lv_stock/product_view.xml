@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_product_search_form_inherit_l10n_lv_stock" model="ir.ui.view">
+            <field name="name">product.search.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.product_search_form_view_stock"/>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+					<filter name="non_zero" string="Non-zero Quantities" domain="['|',('qty_available2','!=','0'),('virtual_available2','!=','0')]" help="Only products with quantity and virtual available greater than zero." context="{'refresh_cache': True}"/>
+				</field>
+			</field>
+		</record>
+
+<!--        <record id="product.product_normal_action" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="view_product_search_form_inherit_l10n_lv_stock"/>
+			<field name="context">{"search_default_non_zero":1}</field>
+        </record> -->
+
+    </data>
+</openerp>

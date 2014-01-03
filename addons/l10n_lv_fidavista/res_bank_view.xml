@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_account_finance_configuration" name="Finances" parent="account.menu_finance_configuration" sequence="15" groups="account.group_account_user"/>
+
+        <menuitem action="base.action_res_bank_form" id="menu_action_res_bank_form_fidavista" parent="menu_account_finance_configuration" groups="account.group_account_user"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_property_form_inherit_fidavista" model="ir.ui.view">
+            <field name="name">res.partner.property.form.inherit.fidavista</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+		<xpath expr="//field[@name='bank_ids']" position="before">
+		    <field name="id" invisible="1"/>
+		</xpath>
+		<xpath expr="//field[@name='bank_ids']" position="attributes">
+		    <attribute name="attrs">{'readonly': [('id','=',False)]}</attribute>
+		</xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

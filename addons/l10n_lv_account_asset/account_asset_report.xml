@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report auto="False"
+                id="report_account_asset_card_l10n_lv_html"
+                model="account.asset.asset"
+                name="l10n_lv_account_asset.card"
+                file="l10n_lv_account_asset/report/account_asset_card_report_html.mako"
+                string="Asset Card"
+                report_type="webkit"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_li"/>
+        <report auto="False"
+                id="report_account_asset_confirmation_l10n_lv_html"
+                model="account.asset.asset"
+                name="l10n_lv_account_asset.confirmation"
+                file="l10n_lv_account_asset/report/account_asset_confirmation_report_html.mako"
+                string="Asset Confirmation"
+                report_type="webkit"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+        <report auto="False"
+                id="report_account_asset_turnover_l10n_lv_html"
+                model="account.asset.asset"
+                name="l10n_lv_account_asset.turnover"
+                file="l10n_lv_account_asset/report/account_asset_turnover_report_html.mako"
+                string="Asset Turnover"
+		menu="False"
+                report_type="webkit"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+        <report auto="False"
+                id="report_account_asset_list_l10n_lv_html"
+                model="account.asset.asset"
+                name="l10n_lv_account_asset.list"
+                file="l10n_lv_account_asset/report/account_asset_list_report_html.mako"
+                string="List of Assets"
+		menu="False"
+                report_type="webkit"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+    </data>
+</openerp>

@@ -1,0 +1,263 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+        ${css}
+    </style>
+</head>
+
+<body>
+	%for inv in objects :
+	<% setLang(inv.partner_id.lang) %>
+	<table class="basic_table" width="100%">
+		<tr>
+			<th>Saņēmējs</th>
+			<td class="numbers">
+				<b>
+				%if inv.type == 'out_invoice' :
+				<span>${_("Invoice")}:</span>
+				%elif inv.type == 'in_invoice' :
+				<span>${_("Supplier Invoice")}:</span>   
+				%elif inv.type == 'out_refund' :
+				<span>${_("Refund")}:</span> 
+				%elif inv.type == 'in_refund' :
+				<span>${_("Supplier Refund")}:</span> 
+				%endif
+				${inv.number or ''|entity}<br/>${formatLang(inv.date_invoice, date=True)|entity}
+				</b>
+			</td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr>
+			<td width="40%">
+				<table class="basic_table">
+					<tr>
+						<td><b>${inv.partner_id.name |entity}</b></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							${inv.address_contact_id.street and (inv.address_contact_id.street + ',') or '' |entity}
+							${inv.address_contact_id.city and (inv.address_contact_id.city + ',') or '' |entity}
+							${inv.address_contact_id.zip and (inv.address_contact_id.zip + ',') or '' |entity}
+							${inv.address_contact_id.country_id.name or '' |entity}
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="5%"></td>
+			<td>
+				<table class="basic_table">
+					<tr>
+						<td><b>Reģ.Nr.:</b></td>
+						<td>${inv.partner_id.ref or '' |entity}</td>
+					</tr>
+					<tr>
+						<td><b>PVN reģ.Nr.:</b></td>
+						<td>${inv.partner_id.vat or '' |entity}</td>
+					</tr>
+					<tr>
+						<td colspan="2" width="100%">
+							<b>Juridiskā adrese:</b> 
+							${inv.address_invoice_id.street and (inv.address_invoice_id.street + ',') or '' |entity}
+							${inv.address_invoice_id.city and (inv.address_invoice_id.city + ',') or '' |entity}
+							${inv.address_invoice_id.zip and (inv.address_invoice_id.zip + ',') or '' |entity}
+							${inv.address_invoice_id.country_id.name or '' |entity}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Norēķinu konts:</b></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table class="basic_table10" width="100%">
+							%if inv.partner_id.bank_ids :
+							%for b in inv.partner_id.bank_ids :
+								<tr>
+									<td>
+										${b.bank_name or '' |entity} ${b.bank_bic or '' |entity}
+									</td>
+									<td width="50%" style="text-align:right">
+										${b.acc_number or '' |entity}
+									</td>
+								</tr>
+							%endfor
+							%endif
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		
+		<tr style="height:15px">
+		</tr>
+		
+		<tr>
+			<td>
+				<table class="basic_table">
+					<tr>
+						<th>Piegādātājs</th>
+					</tr>
+					<tr>
+						<td><b>${company.name |entity}</b></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							${company and company.street and (company.street + ',') or ''|entity}
+							${company and company.street2 and (company.street2 + ',') or ''|entity}
+							${company and company.city and (company.city + ',') or ''|entity}
+							${company and company.zip and (company.zip + ',') or ''|entity}
+							${company.country_id and company.country_id.name or ''|entity}
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td></td>
+			<td>
+				<table class="basic_table">
+					<tr>
+						<td><b>Reģ.Nr.:</b></td>
+						<td>${company and company.company_registry or '' |entity}</td>
+					</tr>
+					<tr>
+						<td><b>PVN reģ.Nr.:</b></td>
+						<td>${company and company.vat or '' |entity}</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<b>Juridiskā adrese:</b> 
+							${company and company.street and (company.street + ',') or ''|entity}
+							${company and company.street2 and (company.street2 + ',') or ''|entity}
+							${company and company.city and (company.city + ',') or ''|entity}
+							${company and company.zip and (company.zip + ',') or ''|entity}
+							${company.country_id and company.country_id.name or ''|entity}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Norēķinu konts:</b></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<table class="basic_table10" width="100%">
+							%if company.bank_ids :
+							%for ba in company.bank_ids :
+								<tr>
+									<td>
+										${ba.bank_name or '' |entity} ${ba.bank_bic or '' |entity}
+									</td>
+									<td width="50%" style="text-align:right">
+										${ba.acc_number or '' |entity}
+									</td>
+								</tr>
+							%endfor
+							%endif
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br/>
+	<table class="basic_table10">
+		<tr>
+			<td >Datums:</td>
+			<td class="numbers" style="border-right:1px solid grey">${formatLang(inv.date_invoice, date=True)|entity}</td>
+			<td>${inv.name or '' |entity}</td>
+		</tr>
+		<tr>
+			<td>Apmaksas termiņš:</td>
+			<td class="numbers" style="border-right:1px solid grey">${formatLang(inv.date_due, date=True)|entity}</td>
+		</tr>
+	</table>
+	<br/>
+	<table class="list_table" width="100%">
+		<thead>
+			<tr>
+				<th class="description" width="45%">${_("Description")}</th>
+				<th>${_("Taxes")}</th>
+				<th>${_("QTY")}</th>
+				<th>${_("UOM")}</th>
+				<th>${_("Unit Price")}</th>
+				<th>${_("Disc.(%)")}</th>
+				<th>${_("Price")}</th>
+			</tr>
+		</thead>
+		%for line in inv.invoice_line :
+		<tbody>
+			<tr>
+				<td class="description">${line.name|entity}</td>
+				<td>${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])|entity}</td>
+				<td>${line.quantity |entity}</td>
+				<td>${line.uos_id.name |entity}</td>
+				<td class="numbers">${formatLang(line.price_unit) |entity}</td>
+				<td>${line.discount or '' |entity}</td>
+				<td class="numbers">${formatLang(line.price_subtotal) |entity}</td>
+			</tr>
+		%endfor
+			<tr>
+				<td colspan="4" style="border-style:none"></td>
+				<td colspan="2" style="text-align:left;border-top:2px solid">Summa kopā:</td>
+				<td class="numbers" style="border-top:2px solid">${formatLang(inv.amount_untaxed) |entity}</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="border-style:none"></td>
+				<td colspan="2" style="text-align:left;border-style:none">Nodokļi:</td>
+				<td class="numbers">${formatLang(inv.amount_tax) |entity}</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="border-style:none"></td>
+				<td colspan="2" style="text-align:left;border-top:2px solid"><b>Summa apmaksai:</b></td>
+				<td class="numbers" style="border-top:2px solid"><b>${formatLang(inv.amount_total) |entity}</b></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table class="list_table" width="100%">
+		<tr>
+			<td width="40%" style="border-style:none">
+				<table class="list_table" width="100%">
+					<tr>
+						<th class="description">Nodoklis</th>
+						<th>${_("Base")}</th>
+						<th>${_("Amount")}</th>
+					</tr>
+					%if inv.tax_line :
+						%for t in inv.tax_line :
+					<tr>
+						<td class="description">${ t.name |entity }</td>
+						<td class="numbers">${ t.base |entity}</td>
+						<td class="numbers">${ formatLang(t.amount) |entity}</td>
+					</tr>
+						%endfor
+					%endif
+					<tr>
+						<td style="border-style:none"></td>
+						<td style="border-top:2px solid"><b>${_("Total")}</b></td>
+						<td class="numbers" style="border-top:2px solid"><b>${ formatLang(inv.amount_tax) |entity}</b></td>
+					</tr>
+				</table>
+			</td>
+			<td width="5%" style="border-style:none"></td>
+			<td class="description" style="border-style:none; text-align:center">
+				<b>Summa vārdiem:</b>
+				<br/>
+				${helper.verbose_num_lv(inv.amount_total, inv.currency_id.name)}
+			</td>
+		</tr>
+	</table>
+	
+	<p style="page-break-after:always"></p>
+	
+	%endfor
+</body>
+
+</html>

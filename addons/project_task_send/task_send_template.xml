@@ -12,13 +12,14 @@
             <field name="auto_delete" eval="True" />
             <field name="model_id" ref="project.model_project_task" />
             <field name="body_html"><![CDATA[
-<strong>Task description</strong><br />
-${object.description or ''}<br />
+<strong>Klients</strong><br /> 
+${object.partner_id.name}<br /> 
 
-% if object.context_id:
-<strong>Context</strong><br />
-${object.context_id.name or ''}<br />
-% endif
+<strong>Task description</strong><br /> 
+${object.description or ''}<br /> 
+
+<strong>Deadline</strong><br /> 
+${object.date_deadline or ''}<br />
             ]]></field>
         </record>
 

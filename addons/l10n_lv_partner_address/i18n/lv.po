@@ -1,0 +1,230 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-10 08:38+0000\n"
+"PO-Revision-Date: 2013-04-10 08:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address.type,name:0
+msgid "Type Name"
+msgstr "Veida Nosaukums"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,city:0
+msgid "City"
+msgstr "Pilsēta"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_zip:0
+msgid "Partner Zip"
+msgstr "Partnera Pasta Indekss"
+
+#. module: l10n_lv_partner_address
+#: model:ir.actions.act_window,name:l10n_lv_partner_address.action_partner_address_type
+#: model:ir.ui.menu,name:l10n_lv_partner_address.menu_partner_address_type
+msgid "Address Types"
+msgstr "Adrešu veidi"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,zip:0
+msgid "Zip"
+msgstr "Pasta indekss"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_street:0
+msgid "Partner Street"
+msgstr "Partnera iela"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+msgid "Group By..."
+msgstr "Grupēt pēc..."
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_street2:0
+msgid "Partner Street 2"
+msgstr "Partnera iela 2"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+#: field:res.partner.address,is_supplier_add:0
+msgid "Supplier"
+msgstr "Piegādātājs"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+#: field:res.partner.address,type:0
+msgid "Type"
+msgstr "Veids"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address.type,for:0
+msgid "For"
+msgstr "Kam"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,state_id:0
+msgid "Fed. State"
+msgstr "Fed. Apgabals"
+
+#. module: l10n_lv_partner_address
+#: selection:res.partner.address.type,for:0
+msgid "Physical Person"
+msgstr "Fiziska Persona"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,company_id:0
+msgid "Company"
+msgstr "Uzņēmums"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_country:0
+msgid "Partner Country"
+msgstr "Partnera Valsts"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_city:0
+msgid "Partner City"
+msgstr "Partnera Pilsēta"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,for_domain2:0
+msgid "For Domain 2"
+msgstr "Domēnam 2"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,for_domain1:0
+msgid "For Domain 1"
+msgstr "Domēnam 1"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner,address_id:0
+#: view:res.partner.address:0
+msgid "Address"
+msgstr "Adrese"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner,delivery_address:0
+msgid "Delivery Address"
+msgstr "Piegādes adrese"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner,office_address:0
+msgid "Office Address"
+msgstr "Biroja adrese"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+#: field:res.partner.address,is_customer_add:0
+msgid "Customer"
+msgstr "Klienti"
+
+#. module: l10n_lv_partner_address
+#: help:res.partner.address,active:0
+msgid "Uncheck the active field to hide the contact."
+msgstr "Lai paslēptu kontaktu, izķeksējiet aktīvo lauku."
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+#: field:res.partner.address,country_id:0
+msgid "Country"
+msgstr "Valsts"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,active:0
+msgid "Active"
+msgstr "Aktīvs"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner:0
+msgid "Legal Address for a Company and Declared address for a Person."
+msgstr "Juridiskā adrese uzņēmumam un deklarētā adrese fiziskai personai."
+
+#. module: l10n_lv_partner_address
+#: model:ir.actions.act_window,name:partner_address.action_partner_addess_tree
+msgid "Partner Contacts"
+msgstr "Partnera Kontakti"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+msgid "Postal Address"
+msgstr "Pasta adrese"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,color:0
+msgid "Color Index"
+msgstr "Krāsas Indekss"
+
+#. module: l10n_lv_partner_address
+#: model:ir.actions.act_window,name:l10n_lv_partner_address.action_partner_address_form
+#: model:ir.ui.menu,name:l10n_lv_partner_address.menu_partner_address_book
+#: model:ir.ui.menu,name:l10n_lv_partner_address.menu_partner_address_form
+msgid "Addresses"
+msgstr "Adreses"
+
+#. module: l10n_lv_partner_address
+#: help:res.partner,delivery_address:0
+#: help:res.partner,office_address:0
+msgid "Enter this address, if it differs from Legal Address."
+msgstr "Aizpildiet šo adresi, ja tā atšķiras no juridiskās adreses."
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,partner_state:0
+msgid "Partner State"
+msgstr "Partnera apgabals"
+
+#. module: l10n_lv_partner_address
+#: selection:res.partner.address.type,for:0
+msgid "Juridical Person"
+msgstr "Juridiska persona"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner.address,street:0
+msgid "Street"
+msgstr "Iela"
+
+#. module: l10n_lv_partner_address
+#: model:ir.model,name:l10n_lv_partner_address.model_res_partner_address_type
+#: view:res.partner.address.type:0
+msgid "Partner Address Types"
+msgstr "Partnera adrešu veidi"
+
+#. module: l10n_lv_partner_address
+#: help:res.partner.address.type,for:0
+msgid "Choose the type of person this address type will be used for."
+msgstr "Izvēlieties, kādai personai attiecīgā adrese tiks piemērota."
+
+#. module: l10n_lv_partner_address
+#: model:ir.model,name:l10n_lv_partner_address.model_res_partner
+#: view:res.partner.address:0
+#: field:res.partner.address,partner_id:0
+msgid "Partner"
+msgstr "Partneris"
+
+#. module: l10n_lv_partner_address
+#: model:ir.model,name:l10n_lv_partner_address.model_res_partner_address
+#: view:res.partner.address:0
+msgid "Partner Addresses"
+msgstr "Partnera adreses"
+
+#. module: l10n_lv_partner_address
+#: view:res.partner.address:0
+msgid "Search Contact"
+msgstr "Kontakta meklēšana"
+
+#. module: l10n_lv_partner_address
+#: field:res.partner,company_registry:0
+msgid "Company Registry"
+msgstr "Reģistrācijas Nr."
+

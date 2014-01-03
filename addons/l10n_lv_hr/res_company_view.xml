@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <record id="view_company_form_inherit_l10n_lv_hr" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.l10n.lv.hr</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+
+          <xpath expr="/form/sheet/notebook/page[@string='General Information']/group[@string='Report Footer Configuration']" position="after">
+	    <group string="Responsible Person for Contracts">
+	      <field name="responsible_person"/>
+	      <field name="responsible_person_position"/>
+	      <field name="responsible_person_justification"/>
+	    </group>
+	  </xpath>
+
+        </field>
+      </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="mr_counters_form_view" model="ir.ui.view">
+            <field name="name">mr.counters.form</field>
+            <field name="model">mr.counters</field>
+
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Meter">
+                    <group >
+                    <field name="name" placeholder="Name"/>
+                    <field name="counter_type"/>
+                    <field name="virtual_counter"/>
+                    <field name="description"/>
+                    <field name="link_agreement"/>
+                    <field name="link_product" />
+                    </group >
+                    <notebook>
+                    <page string="Readings">
+
+
+
+                        <group >
+                                                    <group >
+
+                            <button colspan="2"
+                                name="%(action_add_virtual_readings)d"
+                                string="Add Readings"
+                                type="action"
+                                icon="gtk-execute"
+                                class="oe_inline" />
+
+                        </group>
+
+
+
+
+                            <field name="mr_readings_ids" nolabel="1" colspan="6" widget="one2many_list"  >
+                                 <tree string="MR Readings">
+                                     <field name="period_value"/>
+                                     <field name="value_now"/>
+                                     <field name="value_last"/>
+                                     <field name="it_nulled"/>
+                                     <field name="it_correct"/>
+                                     <field name="value_diff"/>
+                                 </tree>
+                            </field>
+                        </group>
+                    </page>
+
+                    <page string="V-counter" attrs="{'invisible':[('virtual_counter','!=',True)]}">
+                        <group>
+                            <field colspan="4" name="virtual_counter_ids" nolabel="1">
+                                <tree string="V counter">
+                                    <field name="sequence"/>
+                                    <field name="parent_counter_id"/>
+                                    <field name="operation_type"/>
+
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    </notebook>
+                </form>
+            </field>
+</record>
+
+
+<record model="ir.actions.act_window" id="action_mr_counter_form">
+        <field name="name">mr_counters</field>
+        <field name="res_model">mr.counters</field>
+
+</record>
+
+<record model="ir.actions.act_window" id="action_mr_readings_form">
+        <field name="name">mr_readings</field>
+        <field name="res_model">mr.readings</field>
+
+</record>
+
+<menuitem name="Stuff" icon="terp-project" id="stuff_menu" />
+    <menuitem name="Meter" parent="stuff_menu" id="stuff_menu_mr"/>
+
+    <menuitem
+            name="Counters"
+            action="action_mr_counter_form"
+            id="mr_counters_sub_menu"
+            groups="base.group_no_one"
+            parent="stuff_menu_mr"/>
+    <menuitem
+            name="Readings"
+            action="action_mr_readings_form"
+            id="mr_readings_sub_menu"
+            groups="base.group_no_one"
+            parent="stuff_menu_mr"/>
+
+</data>
+</openerp>
+

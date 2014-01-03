@@ -1,0 +1,401 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_lv_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-26 11:30+0000\n"
+"PO-Revision-Date: 2013-03-26 11:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lv_hr
+#: view:hr.employee:0
+msgid "Declared Address"
+msgstr "Deklarētā adrese"
+
+#. module: l10n_lv_hr
+#: field:hr.config.settings,group_employee_name_surname:0
+msgid "Use employee name and surname in separate fields"
+msgstr "Izmantot darbinieka vārdu un uzvārdu atsevišķos laukos"
+
+#. module: l10n_lv_hr
+#: model:ir.model,name:l10n_lv_hr.model_hr_employee
+msgid "Employee"
+msgstr "Darbinieks"
+
+#. module: l10n_lv_hr
+#: view:hr.contract:0
+msgid "Duties"
+msgstr "Pienākumi"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,passport_expire_date:0
+msgid "Passport Expiration Date"
+msgstr "Pase derīga līdz"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,contract_date_end:0
+msgid "Contract End Date"
+msgstr "Līguma beigu datums"
+
+#. module: l10n_lv_hr
+#: sql_constraint:hr.contract:0
+msgid "Contract Reference must be unique!"
+msgstr "Līguma numuram jābūt unikālam!"
+
+#. module: l10n_lv_hr
+#: help:hr.config.settings,group_employee_name_surname:0
+msgid "This allows you to use Employees name and surname in separate fields instead of one."
+msgstr "Šis ļauj Jums izmantot darbinieka vārdu un uzvārdu atsevišķos laukos."
+
+#. module: l10n_lv_hr
+#: view:hr.employee:0
+#: field:hr.employee,cv_text:0
+msgid "CV"
+msgstr "CV"
+
+#. module: l10n_lv_hr
+#: model:res.groups,name:l10n_lv_hr.group_employee_cv
+msgid "Employees CV"
+msgstr "Darbinieku CV"
+
+#. module: l10n_lv_hr
+#: help:hr.config.settings,group_employee_cv:0
+msgid "This allows you to put Employees CV text in his or her card."
+msgstr "Šis ļauj Jums ievietot darbinieka CV tekstu viņa(-as) kartiņā."
+
+#. module: l10n_lv_hr
+#: field:hr.employee,address_work_id:0
+msgid "Working Address"
+msgstr "Darba vietas adrese"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,address_residence_id:0
+msgid "Residence Address"
+msgstr "Dzīvesvietas adrese"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,employee_name:0
+#: field:hr.contract,employee_name:0
+msgid "Name"
+msgstr "Vārds"
+
+#. module: l10n_lv_hr
+#: model:ir.model,name:l10n_lv_hr.model_hr_contract
+msgid "Contract"
+msgstr "Līgums"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,contract_date_start:0
+msgid "Contract Start Date"
+msgstr "Līguma sākuma datums"
+
+#. module: l10n_lv_hr
+#: field:hr.contract,main_duties:0
+msgid "Main Duties"
+msgstr "Pamatpienākumi"
+
+#. module: l10n_lv_hr
+#: field:hr.config.settings,group_employee_cv:0
+msgid "Use employees CV text"
+msgstr "Izmantot darbinieku CV tekstu"
+
+#. module: l10n_lv_hr
+#: field:hr.contract,additional_duties:0
+msgid "Additional Duties"
+msgstr "Papildpienākumi"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,introductory_done:0
+msgid "Introductory Done"
+msgstr "Ievadinstruktāža paveikta"
+
+#. module: l10n_lv_hr
+#: view:hr.employee:0
+msgid "Full Name"
+msgstr "Pilns vārds"
+
+#. module: l10n_lv_hr
+#: sql_constraint:hr.employee:0
+msgid "Identification No. must be unique!"
+msgstr "Identifikācijas numuram (personas kodam) jābūt unikālam!"
+
+#. module: l10n_lv_hr
+#: model:res.groups,name:l10n_lv_hr.group_employee_name_surname
+msgid "Name and Surname instead of Full Name"
+msgstr "Sadalīt pilno vārdu vārdā un uzvārdā"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,employee_surname:0
+#: field:hr.contract,employee_surname:0
+msgid "Surname"
+msgstr "Uzvārds"
+
+#. module: l10n_lv_hr
+#: model:ir.actions.report.xml,name:l10n_lv_hr.report_l10n_lv_hr_contract
+msgid "Employee Contract"
+msgstr "Darbinieka līgums"
+
+#. module: l10n_lv_hr
+#: view:hr.config.settings:0
+msgid "Personal Information"
+msgstr "Personīgā informācija"
+
+#. module: l10n_lv_hr
+#: field:hr.employee,passport_issue_date:0
+msgid "Passport Issue Date"
+msgstr "Pases izdošanas datums"
+
+#. module: l10n_lv_hr
+#: field:hr.contract,other_terms:0
+msgid "Other Terms"
+msgstr "Citi nosacījumi"
+
+#. module: l10n_lv_hr
+#: view:hr.config.settings:0
+msgid "Curriculum Vitae"
+msgstr "Curriculum Vitae"
+
+#. module: l10n_lv_hr
+#: view:hr.employee:0
+msgid "Contract Information"
+msgstr "Līguma informācija"
+
+#. module: l10n_lv_hr
+#: view:res.company:0
+msgid "Responsible Person for Contracts"
+msgstr "Paraksttiesīgā persona līgumu noformēšanai"
+
+#. module: l10n_lv_hr
+#: field:res.company,responsible_person:0
+msgid "Responsible Person"
+msgstr "Paraksttiesīgās personas vārds, uzvārds"
+
+#. module: l10n_lv_hr
+#: field:res.company,responsible_person_position:0
+msgid "Position of Responsible Person"
+msgstr "Paraksttiesīgās personas amats"
+
+#. module: l10n_lv_hr
+#: field:res.company,responsible_person_justification:0
+msgid "Justification of Act of the Responsible Person"
+msgstr "Paraksttiesīgās personas darbības pamatojums"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Monday"
+msgstr "Pirmdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Tuesday"
+msgstr "Otrdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Wednesday"
+msgstr "Trešdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Thursday"
+msgstr "Ceturtdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Friday"
+msgstr "Piektdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Saturday"
+msgstr "Sestdiena"
+
+#. module: resource
+#: selection:resource.calendar.attendance,dayofweek:0
+msgid "Sunday"
+msgstr "Svētdiena"
+
+#. module: hr_contract
+#: field:hr.contract,trial_date_start:0
+msgid "Trial Start Date"
+msgstr "Pārbaudes Laika Sākuma Datums"
+
+#. module: hr_contract
+#: field:hr.employee,vehicle:0
+msgid "Company Vehicle"
+msgstr "Uzņēmuma Auto"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Advantages..."
+msgstr "Priekšrocības..."
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Search Contract"
+msgstr "Meklēt Līgumu"
+
+#. module: hr_contract
+#: field:hr.employee,children:0
+msgid "Number of Children"
+msgstr "Bērnu Skaits"
+
+#. module: hr_contract
+#: help:hr.employee,contract_id:0
+msgid "Latest contract of the employee"
+msgstr "Darbinieka pēdējais līgums"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Job"
+msgstr "Amats"
+
+#. module: hr_contract
+#: field:hr.contract,advantages:0
+msgid "Advantages"
+msgstr "Priekšrocības"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Work Permit"
+msgstr "Darba Atļauja"
+
+#. module: hr_contract
+#: model:ir.actions.act_window,name:hr_contract.action_hr_contract_type
+#: model:ir.ui.menu,name:hr_contract.hr_menu_contract_type
+msgid "Contract Types"
+msgstr "Līgumu Tipi"
+
+#. module: hr_contract
+#: view:hr.employee:0
+msgid "Medical Exam"
+msgstr "Medicīniskā Pārbaude"
+
+#. module: hr_contract
+#: field:hr.contract,date_end:0
+msgid "End Date"
+msgstr "Beigu Datums"
+
+#. module: hr_contract
+#: help:hr.contract,wage:0
+msgid "Basic Salary of the employee"
+msgstr "Darbinieka pamata alga"
+
+#. module: hr_contract
+#: view:hr.contract:0
+#: field:hr.contract,name:0
+msgid "Contract Reference"
+msgstr "Līguma Atsauce"
+
+#. module: hr_contract
+#: view:hr.contract:0
+#: field:hr.contract,notes:0
+msgid "Notes"
+msgstr "Piezīmes"
+
+#. module: hr_contract
+#: field:hr.contract,permit_no:0
+msgid "Work Permit No"
+msgstr "Darba Atļaujas Nr."
+
+#. module: hr_contract
+#: view:hr.contract:0
+#: view:hr.employee:0
+#: field:hr.employee,contract_id:0
+#: model:ir.model,name:hr_contract.model_hr_contract
+#: model:ir.ui.menu,name:hr_contract.next_id_56
+msgid "Contract"
+msgstr "Līgums"
+
+#. module: hr_contract
+#: view:hr.contract:0
+#: field:hr.contract,type_id:0
+#: view:hr.contract.type:0
+#: field:hr.contract.type,name:0
+#: model:ir.model,name:hr_contract.model_hr_contract_type
+msgid "Contract Type"
+msgstr "Līguma Tips"
+
+#. module: hr_contract
+#: view:hr.contract:0
+#: field:hr.contract,working_hours:0
+msgid "Working Schedule"
+msgstr "Darba Grafiks"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Salary and Advantages"
+msgstr "Alga un Priekšrocības"
+
+#. module: hr_contract
+#: field:hr.contract,job_id:0
+msgid "Job Title"
+msgstr "Amata Nosaukums"
+
+#. module: hr_contract
+#: constraint:hr.contract:0
+msgid "Error! Contract start-date must be less than contract end-date."
+msgstr "Kļūda! Līguma sākuma datumam jābūt mazākam par beigu datumu."
+
+#. module: hr_contract
+#: field:hr.employee,manager:0
+msgid "Is a Manager"
+msgstr "Ir Vadītājs"
+
+#. module: hr_contract
+#: field:hr.contract,date_start:0
+msgid "Start Date"
+msgstr "Sākuma Datums"
+
+#. module: hr_contract
+#: field:hr.contract,visa_no:0
+msgid "Visa No"
+msgstr "Vīzas Nr."
+
+#. module: hr_contract
+#: field:hr.employee,vehicle_distance:0
+msgid "Home-Work Dist."
+msgstr "Attālums no Darba līdz Mājām"
+
+#. module: hr_contract
+#: field:hr.employee,place_of_birth:0
+msgid "Place of Birth"
+msgstr "Dzimšanas Vieta"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Trial Period Duration"
+msgstr "Pārbaudes Laika Ilgums"
+
+#. module: hr_contract
+#: view:hr.contract:0
+msgid "Duration"
+msgstr "Ilgums"
+
+#. module: hr_contract
+#: field:hr.contract,visa_expire:0
+msgid "Visa Expire Date"
+msgstr "Vīzas Derīguma Termiņš"
+
+#. module: hr_contract
+#: field:hr.employee,medic_exam:0
+msgid "Medical Examination Date"
+msgstr "Medicīniskās Pārbaudes Datums"
+
+#. module: hr_contract
+#: field:hr.contract,trial_date_end:0
+msgid "Trial End Date"
+msgstr "Pārbaudes Laika Beigu Datums"
+
+#. module: hr_contract
+#: view:hr.contract.type:0
+msgid "Search Contract Type"
+msgstr "Meklēt Līguma Tipu"

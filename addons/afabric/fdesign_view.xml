@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!--  Form View  -->
+
+<record id="fdesign_form_view" model="ir.ui.view">
+            <field name="name">fdesign.form</field>
+            <field name="model">fdesign</field>
+            <field name="arch" type="xml">
+                <form string="Design Form" version="7.0">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,invoiced,done" statusbar_colors='{"draft":"red","done":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <group>
+                                    <field name="name" placeholder="Name"/>
+                                    <field name="parent_id" domain="[('link_fabric_id','=',parent.id)]" context="{'fabric_id':parent.id}"/>
+                                    <field name="id_design"/>
+
+<!--
+                                    <field name="link_product" on_change="onchange_product_id(link_product, name, context)" class="oe_inline"/>
+                                    <field name="product_uom" class="oe_inline" on_change="onchange_uom(link_product, product_uom)" groups="product.group_uom"/>
+-->
+                                    
+                                </group >
+                            </group >
+                        </group >
+
+
+
+                        <notebook>
+                        <page string="Information">
+                            <field name="link_fdstage" nolabel="1"  widget="one2many_list" >
+                                <tree string="Circulation">
+                                    <field name="fdstage_seq"/>
+                                    <field name="name"/>
+
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Size">
+
+                                <group>
+                                    <group string="P size">
+                                        <field name="psize_h" />
+                                        <field name="psize_w" />
+                                        <field name="psize_z" />
+                                    </group>
+                                    <group string="A size">
+                                        <field name="a_pknsize_h" />
+                                        <field name="a_pknsize_w" />
+                                    </group>
+                                    <group string="Info">
+                                        <field name="qty_onblank_b" />
+                                        <field name="blade" />
+                                    </group >
+                                    <group string="B size">
+                                        <field name="b_blanksize_h" />
+                                        <field name="b_blanksize_w" />
+                                    </group>
+                                </group>
+
+                        </page>
+
+
+                        <page string="Links">
+
+                            <group >
+                                <field name="link_fabric_id" nolabel="1" colspan="3"   >
+<!--
+                                    <tree string="Project">
+                                        <field name="id_fabric"/>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+-->
+
+                                </field>
+
+                            </group>
+
+                        </page>
+
+                        </notebook>
+                        <field name="description" placeholder="describe the product characteristics..."/>
+
+                    </sheet>
+                </form>
+            </field>
+</record>
+
+    <!--   Tree View  -->
+
+    <record id="fdesign_list_view" model="ir.ui.view">
+        <field name="name">fdesign.tree</field>
+        <field name="model">fdesign</field>
+        <field name="field_parent">child_id</field>
+        <field name="arch" type="xml">
+            <tree colors="blue:type == 'view';black:type in ('other','receivable','payable','consolidation');gray:type == 'closed'" string="Chart of accounts" toolbar="1" >
+                <field name="name"/>
+                <field name="id_design"/>
+
+                <field name="description"/>
+                <!--<field name="link_product"/>
+               <field name="parent_id" invisible="1"/> -->
+                <field name="parent_id" />
+                <field name="child_id" />
+                <field name="parent_left" />
+                <field name="parent_right" />
+                <field name="level" />
+
+
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Menu -->
+
+<record model="ir.actions.act_window" id="action_fdesign_form">
+        <field name="name">fdesign</field>
+        <field name="res_model">fdesign</field>
+
+</record>
+
+    <menuitem
+            name="Fabric Design"
+            action="action_fdesign_form"
+            id="fdesign_sub_menu"
+            groups="base.group_no_one"
+            parent="fabric_menu"/>
+
+
+</data>
+</openerp>
+

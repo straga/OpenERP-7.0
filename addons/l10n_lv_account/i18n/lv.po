@@ -1,0 +1,309 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_lv_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-28 09:32+0000\n"
+"PO-Revision-Date: 2013-06-28 09:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lv_account
+#: selection:account.invoice.list.report,invoice_type:0
+msgid "Customer Refund"
+msgstr "Izejošais Kredītrēķins"
+
+#. module: l10n_lv_account
+#: field:account.invoice,address_contact_id:0
+msgid "Contact Address"
+msgstr "Kontaktadrese"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_invoice_list_l10n_lv_html
+#: model:ir.ui.menu,name:l10n_lv_account.menu_account_invoice_list_report_l10n_lv
+msgid "List of Invoices"
+msgstr "Rēķinu saraksts"
+
+#. module: l10n_lv_account
+#: selection:account.invoice.list.report,invoice_type:0
+msgid "Customer Invoice"
+msgstr "Izejošais Rēķins"
+
+#. module: l10n_lv_account
+#: help:account.move.line.export,amount_currency:0
+msgid "Export data with the currency column if the currency differs from the company currency."
+msgstr "Eksportēt datus ar valūtas kolonnu, ja valūta atšķiras no uzņēmuma valūtas."
+
+#. module: l10n_lv_account
+#: view:account.chart.report:0
+msgid "Print a report of Chart of Accounts"
+msgstr "Drukāt Kontu Plāna atskaiti"
+
+#. module: l10n_lv_account
+#: selection:account.invoice.list.report,invoice_type:0
+msgid "Supplier Invoice"
+msgstr "Ienākošais Rēķins"
+
+#. module: l10n_lv_account
+#: view:account.cash.order.report:0
+msgid "Print an order from Cash Register"
+msgstr "Drukāt Kases Orderi"
+
+#. module: l10n_lv_account
+#: view:account.cash.order.report:0
+#: view:account.chart.report:0
+#: view:account.invoice.list.report:0
+msgid "Print"
+msgstr "Drukāt"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_chart_l10n_lv_html
+#: model:ir.ui.menu,name:l10n_lv_account.menu_account_chart_report_l10n_lv
+msgid "Chart of Accounts"
+msgstr "Kontu Plāns"
+
+#. module: l10n_lv_account
+#: model:ir.ui.menu,name:l10n_lv_account.menu_account_move_line_export
+msgid "Journal Items Export"
+msgstr "Kontējumu Eksports"
+
+#. module: l10n_lv_account
+#: view:account.bank.statement.line:0
+msgid "Account Bank Statement Line Search"
+msgstr "Bankas Izrakstu Rindiņas"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,sort_selection:0
+msgid "Entries Sorted by"
+msgstr "Ieraksti kārtoti pēc"
+
+#. module: l10n_lv_account
+#: selection:account.move.line.export,sort_selection:0
+msgid "Journal Entry Number"
+msgstr "Grāmatojuma numurs"
+
+#. module: l10n_lv_account
+#: field:account.invoice.list.report,invoice_type:0
+msgid "Type"
+msgstr "Tips"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,company_id:0
+msgid "Company"
+msgstr "Uzņēmums"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,amount_currency:0
+msgid "With Currency"
+msgstr "Ar Valūtu"
+
+#. module: l10n_lv_account
+#: model:ir.ui.menu,name:l10n_lv_account.menu_account_invoice_report_l10_lv
+msgid "Invoices"
+msgstr "Invoices"
+
+#. module: l10n_lv_account
+#: field:account.cash.order.report,report_line_ids:0
+msgid "Cash Book Lines"
+msgstr "Kases Grāmatas Rindiņas"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,file_save:0
+msgid "Save File"
+msgstr "Saglabāt failu"
+
+#. module: l10n_lv_account
+#: view:account.move.line.export:0
+msgid "Create File"
+msgstr "Izveidot Failu"
+
+#. module: l10n_lv_account
+#: model:ir.actions.act_window,name:l10n_lv_account.action_view_account_cash_order_report_l10n_lv
+msgid "Order form Cash Register"
+msgstr "Kases Orderis"
+
+#. module: l10n_lv_account
+#: view:account.bank.statement.line:0
+#: selection:account.move.line.export,sort_selection:0
+msgid "Date"
+msgstr "Datums"
+
+#. module: l10n_lv_account
+#: field:account.chart.report,chart_account_id:0
+#: field:account.move.line.export,chart_account_id:0
+msgid "Chart of Account"
+msgstr "Kontu Plāns"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,target_move:0
+msgid "Target Moves"
+msgstr "Mērķa Grāmatojumi"
+
+#. module: l10n_lv_account
+#: view:account.cash.order.report:0
+#: view:account.chart.report:0
+#: view:account.invoice.list.report:0
+#: view:account.move.line.export:0
+msgid "Report Options"
+msgstr "Atskaites Opcijas"
+
+#. module: l10n_lv_account
+#: help:account.chart.report,chart_account_id:0
+#: help:account.move.line.export,chart_account_id:0
+msgid "Select Charts of Accounts"
+msgstr "Izvēlieties Kontu Plānu"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,period_from:0
+msgid "Start Period"
+msgstr "Sākuma Periods"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_cash_book_l10n_lv_html
+msgid "Cash Book"
+msgstr "Kases Grāmata"
+
+#. module: l10n_lv_account
+#: selection:account.move.line.export,target_move:0
+msgid "All Posted Entries"
+msgstr "Visi Iegrāmatotie Kontējumi"
+
+#. module: l10n_lv_account
+#: help:account.move.line.export,fiscalyear_id:0
+msgid "Keep empty for all open fiscal year"
+msgstr "Keep empty for all open fiscal year"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,period_to:0
+msgid "End Period"
+msgstr "Beigu Periods"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,fiscalyear_id:0
+msgid "Fiscal Year"
+msgstr "Fiskālais Gads"
+
+#. module: l10n_lv_account
+#: model:ir.actions.act_window,name:l10n_lv_account.action_account_move_line_export_menu
+#: model:ir.model,name:l10n_lv_account.model_account_move_line_export
+msgid "Account Move Line Export"
+msgstr "Kontējumu Eksports"
+
+#. module: l10n_lv_account
+#: model:ir.model,name:l10n_lv_account.model_account_cash_order_report
+msgid "Cash Order Report"
+msgstr "Kases Ordera Atskaite"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_invoice_out_l10n_lv
+msgid "Invoice to send"
+msgstr "Nosūtāms Rēķins"
+
+#. module: l10n_lv_account
+#: view:account.invoice.list.report:0
+msgid "Print a report of all Invoices"
+msgstr "Drukāt atskaiti ar visiem Rēķiniem"
+
+#. module: l10n_lv_account
+#: help:account.cash.order.report,report_line_ids:0
+msgid "Select a Cash Register Line to print the Order from"
+msgstr "Izvēlieties Kases Grāmatas Rindiņu, kuru drukāt atskaitē"
+
+#. module: l10n_lv_account
+#: field:account.invoice,address_invoice_id:0
+msgid "Invoice Address"
+msgstr "Rēķina Adrese"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_cash_order_l10n_lv_html
+msgid "Order from Cash Register"
+msgstr "Kases Grāmatas Orderis"
+
+#. module: l10n_lv_account
+#: view:account.bank.statement.line:0
+msgid "Reference"
+msgstr "Reference"
+
+#. module: l10n_lv_account
+#: view:account.bank.statement.line:0
+#: model:ir.actions.act_window,name:l10n_lv_account.action_account_bank_statement_line_form
+msgid "Account Bank Statement Lines"
+msgstr "Kases Grāmatas Rindiņas"
+
+#. module: l10n_lv_account
+#: model:ir.actions.report.xml,name:l10n_lv_account.report_account_invoice_l10n_lv
+msgid "Invoice html"
+msgstr "Rēķins (html)"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,name:0
+msgid "File Name"
+msgstr "Faila Nosaukums"
+
+#. module: l10n_lv_account
+#: view:account.move.line.export:0
+msgid "or"
+msgstr "vai"
+
+#. module: l10n_lv_account
+#: model:ir.actions.act_window,name:l10n_lv_account.action_account_chart_report_l10n_lv_menu
+#: model:ir.model,name:l10n_lv_account.model_account_chart_report
+msgid "Chart of Accounts Report"
+msgstr "Kontu Plāna Atskaite"
+
+#. module: l10n_lv_account
+#: view:account.move.line.export:0
+msgid "Periods"
+msgstr "Periodi"
+
+#. module: l10n_lv_account
+#: model:ir.model,name:l10n_lv_account.model_account_invoice
+msgid "Invoice"
+msgstr "Rēķins"
+
+#. module: l10n_lv_account
+#: view:account.cash.order.report:0
+#: view:account.chart.report:0
+#: view:account.invoice.list.report:0
+#: view:account.move.line.export:0
+msgid "Cancel"
+msgstr "Atcelt"
+
+#. module: l10n_lv_account
+#: selection:account.invoice.list.report,invoice_type:0
+msgid "Supplier Refund"
+msgstr "Ienākošais Kredītrēķins"
+
+#. module: l10n_lv_account
+#: model:ir.actions.act_window,name:l10n_lv_account.action_account_invoice_list_report_l10n_lv_menu
+#: model:ir.model,name:l10n_lv_account.model_account_invoice_list_report
+msgid "List of Invoices Report"
+msgstr "Rēķinu Saraksta Atskaite"
+
+#. module: l10n_lv_account
+#: selection:account.move.line.export,target_move:0
+msgid "All Entries"
+msgstr "Visi Ieraksti"
+
+#. module: l10n_lv_account
+#: field:account.move.line.export,format:0
+msgid "Format"
+msgstr "Formāts"
+
+#. module: l10n_lv_account
+#: view:account.move.line.export:0
+msgid "Save the File with the required extension."
+msgstr "Saglabājiet failu ar atbilstošo paplašinājumu."
+
+#. module: l10n_lv_account
+#: view:account.move.line.export:0
+msgid "Save document"
+msgstr "Saglabāt dokumentu"
+

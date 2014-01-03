@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<!-- Addresses -->
+
+        <record id="view_res_partner_address_filter" model="ir.ui.view">
+            <field name="name">res.partner.address.select</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Contact">
+                    <group>
+                        <filter string="Customer" name="customer" domain="[('is_customer_add','=','1')]" />
+                        <filter string="Supplier" name="supplier" domain="[('is_supplier_add','=','1')]" />
+                        <separator orientation="vertical"/>
+                        <field name="partner_id" string="Partner"/>
+                        <field name="street"/>
+                        <field name="country_id" />
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                       <filter string="Partner" domain="[]" context="{'group_by' : 'partner_id'}" />
+                       <filter string="Country" domain="[]" context="{'group_by' : 'country_id'}" />
+                       <filter string="Type" domain="[]" context="{'group_by' : 'type'}" />
+                   </group>
+                 </search>
+            </field>
+        </record>
+
+        <record id="view_partner_address_tree" model="ir.ui.view">
+            <field name="name">res.partner.address.tree</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Addresses">
+                    <field name="partner_id"/>
+		            <field name="street"/>
+                    <field name="city"/>
+                    <field name="zip"/>
+                    <field name="country_id"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_partner_addess_tree" model="ir.actions.act_window">
+            <field name="name">Partner Contacts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="view_partner_address_tree"/>
+        </record>
+
+        <record id="view_partner_address_form1" model="ir.ui.view">
+            <field name="name">res.partner.address.form1</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">form</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Address" version="7.0">
+		            <sheet>
+                    	<group colspan="4" col="6">
+                            <field name="active"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection" colspan="2"/>
+                            <field name="partner_id" colspan="2" invisible="1"/>
+                    	</group>
+                        <group colspan="2" col="2">
+                            <separator string="Postal Address" colspan="4" col="4"/>
+                            <field name="street" on_change="onchange_street(street, partner_id)"/>
+                            <field name="city" on_change="onchange_city(city, partner_id)"/>
+                            <field name="zip" on_change="onchange_zip(zip, partner_id)"/>
+                            <field name="state_id" on_change="onchange_state_id(state_id, partner_id)"/>
+                            <field name="country_id" on_change="onchange_country_id(country_id, partner_id)"/>
+                            <field name="for_domain1" invisible="1"/>
+                            <field name="for_domain2" invisible="1"/>
+                            <field name="type" domain="['|',('for','=',for_domain1),('for','=',for_domain2)]"/>
+                            <field name="partner_street" invisible="1"/>
+                            <field name="partner_street2" invisible="1"/>
+                            <field name="partner_city" invisible="1"/>
+                            <field name="partner_zip" invisible="1"/>
+                            <field name="partner_state" invisible="1"/>
+                            <field name="partner_country" invisible="1"/>
+                          </group>
+		    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_partner_address_form" model="ir.actions.act_window">
+            <field name="name">Addresses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_customer":1}</field>
+            <field name="search_view_id" ref="view_res_partner_address_filter"/>
+        </record>
+
+        <record id="action_partner_address_form_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_partner_address_tree"/>
+            <field name="act_window_id" ref="action_partner_address_form"/>
+        </record>
+
+        <record id="action_partner_address_form_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_partner_address_form1"/>
+            <field name="act_window_id" ref="action_partner_address_form"/>
+        </record>
+
+        <menuitem id="menu_partner_address_book" parent="base.menu_base_partner" name="Addresses" sequence="2" />
+
+        <menuitem id="menu_partner_address_form" parent="menu_partner_address_book" action="action_partner_address_form" sequence="1"/>
+
+	<!-- Address Types -->
+
+        <record id="view_partner_address_type_tree" model="ir.ui.view">
+            <field name="name">res.partner.address.type.tree</field>
+            <field name="model">res.partner.address.type</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Address Types">
+                    <field name="name"/>
+                    <field name="for"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_partner_address_type_form" model="ir.ui.view">
+            <field name="name">res.partner.address.type.form</field>
+            <field name="model">res.partner.address.type</field>
+            <field name="arch" type="xml">
+                <form string="Partner Address Types" version="7.0">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="for"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_partner_address_type" model="ir.actions.act_window">
+            <field name="name">Address Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address.type</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem action="action_partner_address_type" id="menu_partner_address_type" name="Address Types" parent="base.menu_config_address_book" sequence="4" groups="base.group_no_one"/>
+
+	<!-- Partner Legal, Office, Delivery Address, hidden 'state_id' -->
+
+      <record id="view_partner_form_inherit_partner_address" model="ir.ui.view">
+        <field name="name">partner.form.inherit.partner.address</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="/form/sheet/group/group/label[@for='street']" position="attributes">
+            <attribute name="string">Legal Address</attribute>
+          </xpath>
+          <xpath expr="/form/sheet/group/group/div[2]/field[@name='street']" position="attributes">
+            <attribute name="help">Legal Address for a Company and Declared address for a Person.</attribute>
+          </xpath>
+          <xpath expr="/form/sheet/group/group/div[2]" position="after">
+	        <field name="office_address" domain="[('type.id','=',5)]" context="{'default_type': 5}" attrs="{'invisible':[('is_company','=',False)]}"/>
+	        <field name="delivery_address" domain="[('type.id','=',6)]" context="{'default_type': 6}" attrs="{'invisible':[('is_company','=',False)]}"/>
+          </xpath>
+            <xpath expr="/form/sheet/group/group[2]/field[@name='email']" position="after">
+	            <field name="company_registry" attrs="{'invisible': [('is_company','=',False)]}"/>
+	        </xpath>
+          <xpath expr="/form/sheet/group/group/div[2]/div[@class='address_format']/field[@name='state_id']" position="attributes">
+	    <attribute name="invisible">1</attribute>
+	  </xpath>
+        </field>
+      </record>
+
+	<!-- Company form to hide 'state_id' -->
+      <record id="view_company_form_inherit_partner_address" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.partner.address</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+	  <xpath expr="/form/sheet/notebook/page[@string='General Information']/group/group/div/div/field[@name='state_id']" position="attributes">
+	    <attribute name="invisible">1</attribute>
+	  </xpath>
+        </field>
+      </record>
+
+    </data>
+</openerp>

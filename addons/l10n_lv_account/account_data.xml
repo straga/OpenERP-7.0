@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="1">
+
+    <!-- This causes tax computation to omit rounding of subtotals for tax lines -->
+    <record id="account.omit_tax_subtotal_round" model="ir.config_parameter">
+      <field name="key">account.omit_tax_subtotal_round</field>
+      <field name="value">1</field>
+    </record>
+
+  </data>
+</openerp>

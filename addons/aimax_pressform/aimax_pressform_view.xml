@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="aimax_pressform_view" model="ir.ui.view">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook" position="inside" >
+                    <page string="PressForm" attrs="{'invisible':[('apf_it_pressform','!=',True)]}">
+                        <group colspan="2" col="2">
+                            <separator string="Info" colspan="2"/>
+                            <field name="apf_partner_id" context="{'search_default_customer':1}" />
+                            <field name="apf_aimax_id" />
+                            <field name="apf_grins_id" />
+                        </group>
+                        <group colspan="2" col="2">
+                            <separator string="Blank Size" colspan="2"/>
+                            <field name="apf_blank_width" />
+                            <field name="apf_blank_length" />
+                            <field name="apf_on_blank" />
+
+                        </group>
+
+                        <separator string="Options" colspan="4" invisible="False"/>
+
+                        <group colspan="2" col="2">
+
+                            <field colspan="4" name="apf_options_ids" nolabel="1">
+                                <tree string="Print Options">
+                                    <field name="name"/>
+                                    <field name="descriptions"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <group colspan="2" col="2">
+
+                            <field colspan="4" name="ampf_productsize_ids" nolabel="1">
+                                <tree string="Product Size">
+                                    <field name="name"/>
+                                    <field name="ampf_productsize_diametr"/>
+                                    <field name="ampf_productsize_width"/>
+                                    <field name="ampf_productsize_lenght"/>
+                                    <field name="ampf_productsize_height"/>
+                                    <field name="ampf_productsize_windows"/>
+                                    <field name="ampf_productsize_windows_diametr"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <group colspan="2" col="2">
+                            <separator string="RAW material" colspan="2"/>
+                            <field colspan="4" name="apf_rawmaterial_ids" nolabel="1">
+                                <tree string="RAW material">
+                                    <field name="name"/>
+
+                                </tree>
+                            </field>
+                        </group>
+
+
+                        <group colspan="2" col="2">
+                            <separator string="Comments" colspan="2"/>
+                            <field name="apf_comments" nolabel="1" />
+                        </group>
+                    </page>
+
+                </xpath>
+                <xpath expr="//label[@for='sale_ok']" position="after">
+                    <field name="apf_it_pressform"/>
+                    <label for="apf_it_pressform"/>
+                    <!--<field name="apf_it_pressform"/>   purchase_ok-->
+                </xpath>
+
+
+
+            </field>
+
+        </record>
+
+
+    </data>
+</openerp>

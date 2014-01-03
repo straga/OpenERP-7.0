@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+		<record id="ir_header_webkit_pi" model="ir.header_webkit">
+			<field eval="&quot;&quot;&quot;A4 LV Portrait Internal&quot;&quot;&quot;" name="name"/>
+			<field eval="&quot;&quot;&quot;Portrait&quot;&quot;&quot;" name="orientation"/>
+			<field eval="&quot;&quot;&quot;A4&quot;&quot;&quot;" name="format"/>
+			<field eval="20.0" name="margin_top"/>
+			<field eval="30.0" name="margin_left"/>
+			<field eval="20.0" name="margin_bottom"/>
+			<field eval="10.0" name="margin_right"/>
+			<field name="css" ><![CDATA[
+body {
+font-family:helvetica;
+font-size:12;
+}
+
+
+.dest_address {
+margin-left:60%;
+font-size:12;
+}
+.header {
+margin-left:0;
+text-align:left;
+width:300px;
+font-size:12;
+}
+
+.header_left {
+margin-left:0;
+text-align:left;
+font-size:10;
+}
+
+.title {
+font-size:16;
+font-weight: bold;
+
+}
+
+
+.basic_table{
+text-align:center;
+border:1px solid lightGrey;
+border-collapse: collapse;
+}
+.basic_table td {
+border:1px solid lightGrey;
+font-size:12;
+
+
+}
+
+.list_table {
+border-color:black;
+text-align:center;
+border-collapse: collapse;
+}
+.list_table td {
+border-color:gray;
+border-top:1px solid gray;
+text-align:left;
+font-size:10;
+padding-right:3px;
+padding-left:3px;
+padding-top:3px;
+padding-bottom:3px;
+}
+
+.list_table th {
+border-bottom:2px solid black;
+text-align:center;
+font-size:10;
+font-weight:bold;
+padding-right:3px;
+padding-left:3px;
+}
+
+.list_table thead {
+    display:table-header-group;
+}
+
+.nobreak {
+page-break-inside:avoid;
+}
+.total {
+width:100%;
+}
+.lib {
+width:10.3%;
+}
+.tot {
+text-align:right;
+width:15%;
+}
+.lefttot {
+width:74%;
+}
+.tax {
+width:50%;
+}]]>
+			</field>
+			<field name="html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header_left" style="border-bottom: 1px solid grey; width: 100%">
+            <tr>
+                <td>${company.name |entity} | Reģ.Nr. ${company and company.company_registry or ''|entity}</td>
+            </tr>
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+			</field>
+			<field name="footer_html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table style="border-top: 1px solid grey; width: 100%">
+              <tr >
+                <td style="text-align:left;font-size:10;">${ formatLang(time.strftime("%Y-%m-%d"), date=True)}  ${time.strftime("%H:%M")} / ${user.name}</td>
+                <td style="text-align:right;font-size:10;">Lapa <span class="page"/></td>
+                <td style="text-align:left;font-size:10;" width="5%">  no <span class="topage"/></td>
+            </tr>
+        </table>
+    </body>
+</html>]]>
+			</field>
+		</record>
+		<record id="ir_header_webkit_li" model="ir.header_webkit">
+			<field eval="&quot;&quot;&quot;A4 LV Landscape Internal&quot;&quot;&quot;" name="name"/>
+			<field eval="&quot;&quot;&quot;Landscape&quot;&quot;&quot;" name="orientation"/>
+			<field eval="&quot;&quot;&quot;A4&quot;&quot;&quot;" name="format"/>
+			<field eval="30.0" name="margin_top"/>
+			<field eval="20.0" name="margin_left"/>
+			<field eval="10.0" name="margin_bottom"/>
+			<field eval="20.0" name="margin_right"/>
+			<field name="css" ><![CDATA[
+body {
+font-family:helvetica;
+font-size:12;
+}
+
+
+.dest_address {
+margin-left:60%;
+font-size:12;
+}
+.header {
+margin-left:0;
+text-align:left;
+width:300px;
+font-size:12;
+}
+
+.header_left {
+margin-left:0;
+text-align:left;
+font-size:10;
+}
+
+.title {
+font-size:16;
+font-weight: bold;
+
+}
+
+
+.basic_table{
+text-align:center;
+border:1px solid lightGrey;
+border-collapse: collapse;
+}
+.basic_table td {
+border:1px solid lightGrey;
+font-size:12;
+
+
+}
+
+.list_table {
+border-color:black;
+text-align:center;
+border-collapse: collapse;
+
+}
+.list_table td {
+border-color:gray;
+border-top:1px solid gray;
+text-align:left;
+font-size:12;
+padding-right:3px;
+padding-left:3px;
+padding-top:3px;
+padding-bottom:3px;
+}
+
+.list_table th {
+border-bottom:2px solid black;
+text-align:center;
+font-size:12;
+font-weight:bold;
+padding-right:3px;
+padding-left:3px;
+}
+
+.list_table thead {
+    display:table-header-group;
+}
+
+
+.total {
+width:100%;
+}
+.lib {
+width:10.3%;
+}
+.tot {
+text-align:right;
+width:15%;
+}
+.lefttot {
+width:74%;
+}
+.tax {
+width:50%;
+}]]>
+			</field>
+			<field name="html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header_left" style="border-bottom: 1px solid grey; width: 100%">
+            <tr>
+                <td>${company.name |entity} | Reģ.Nr. ${company and company.company_registry or ''|entity}</td>
+            </tr>
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+			</field>
+			<field name="footer_html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table style="border-top: 1px solid grey; width: 100%">
+              <tr >
+                <td style="text-align:left;font-size:10;">${ formatLang(time.strftime("%Y-%m-%d"), date=True)}  ${time.strftime("%H:%M")} / ${user.name}</td>
+                <td style="text-align:right;font-size:10;">Lapa <span class="page"/></td>
+                <td style="text-align:left;font-size:10;" width="5%">  no <span class="topage"/></td>
+            </tr>
+        </table>
+    </body>
+</html>]]>
+			</field>
+		</record>
+		<record id="ir_header_webkit_inv" model="ir.header_webkit">
+			<field eval="&quot;&quot;&quot;A4 LV Invoice&quot;&quot;&quot;" name="name"/>
+			<field eval="&quot;&quot;&quot;Portrait&quot;&quot;&quot;" name="orientation"/>
+			<field eval="&quot;&quot;&quot;A4&quot;&quot;&quot;" name="format"/>
+			<field eval="20.0" name="margin_top"/>
+			<field eval="30.0" name="margin_left"/>
+			<field eval="20.0" name="margin_bottom"/>
+			<field eval="10.0" name="margin_right"/>
+			<field name="css" ><![CDATA[
+body {
+font-family:helvetica;
+font-size:12;
+}
+
+
+.dest_address {
+margin-left:60%;
+font-size:12;
+}
+.header {
+margin-left:0;
+text-align:left;
+width:300px;
+font-size:12;
+}
+
+.header_left {
+text-align:left;
+font-size:10;
+}
+
+.title {
+font-size:16;
+font-weight: bold;
+text-align:right;
+}
+
+
+.basic_table{
+text-align:left;
+border-collapse: collapse;
+}
+.basic_table th {
+text-align:left;
+font-size:14;
+padding-bottom:20px;
+padding-left:3px;
+padding-right:3px;
+}
+.basic_table th.numbers {
+text-align:right;
+}
+.basic_table td {
+font-size:12;
+padding-left:3px;
+padding-right:3px;
+}
+.basic_table td.numbers {
+text-align:right;
+}
+
+.basic_table10{
+text-align:left;
+border-collapse: collapse;
+}
+.basic_table10 th {
+font-size:10;
+}
+.basic_table10 td {
+font-size:10;
+padding-right:3px;
+padding-left:3px;
+padding-top:3px;
+padding-bottom:3px;
+}
+
+.list_table {
+border-color:black;
+text-align:center;
+border-collapse: collapse;
+
+}
+.list_table td {
+border-color:gray;
+border-top:1px solid gray;
+text-align:center;
+font-size:10;
+padding-right:3px;
+padding-left:3px;
+padding-top:3px;
+padding-bottom:3px;
+}
+.list_table td.description {
+text-align:left;
+}
+.list_table td.numbers {
+text-align:right;
+}
+
+.list_table th {
+border-bottom:2px solid black;
+text-align:center;
+font-size:10;
+font-weight:bold;
+padding-right:3px;
+padding-left:3px;
+}
+.list_table th.description {
+text-align:left;
+}
+
+.list_table thead {
+display:table-header-group;
+}
+
+.numbers {
+text-align:right;
+}
+.total {
+width:100%;
+}
+.lib {
+width:10.3%;
+}
+.tot {
+text-align:right;
+width:15%;
+}
+.lefttot {
+width:74%;
+}
+.tax {
+width:50%;
+}]]>
+			</field>
+			<field name="html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="margin: 0;" onload="subst()">
+        <table class="header_left" style="border-bottom: 1px solid grey; width: 100%">
+            <tr>
+            <%
+              zz = helper.get_logo_by_name('logo_text')
+            %>
+				%if zz and zz[0]:
+					<td>${helper.embed_logo_by_name('logo_text', height=40)|n}</td>
+                %endif
+            </tr>
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+			</field>
+			<field name="footer_html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table style="border-top: 1px solid grey; width: 100%">
+              <tr >
+                <td style="text-align:right;font-size:10;">Lapa <span class="page"/></td>
+                <td style="text-align:left;font-size:10;" width="5%">  no <span class="topage"/></td>
+            </tr>
+        </table>
+    </body>
+</html>]]>
+			</field>
+		</record>
+		<record id="ir_header_webkit_pe" model="ir.header_webkit">
+			<field eval="&quot;&quot;&quot;A4 LV Portrait External&quot;&quot;&quot;" name="name"/>
+			<field eval="&quot;&quot;&quot;Portrait&quot;&quot;&quot;" name="orientation"/>
+			<field eval="&quot;&quot;&quot;A4&quot;&quot;&quot;" name="format"/>
+			<field eval="40.0" name="margin_top"/>
+			<field eval="30.0" name="margin_left"/>
+			<field eval="20.0" name="margin_bottom"/>
+			<field eval="10.0" name="margin_right"/>
+			<field name="css" ><![CDATA[
+body {
+font-family:helvetica;
+font-size:12;
+}
+
+
+.dest_address {
+margin-left:60%;
+font-size:12;
+}
+.header {
+margin-left:0;
+text-align:center;
+font-size:8;
+}
+.header th {
+font-size:14;
+}
+.header_left {
+margin-left:0;
+text-align:left;
+font-size:10;
+}
+
+.title {
+font-size:16;
+font-weight: bold;
+
+}
+
+
+.basic_table{
+text-align:center;
+border:1px solid lightGrey;
+border-collapse: collapse;
+}
+.basic_table td {
+border:1px solid lightGrey;
+font-size:12;
+
+
+}
+
+.list_table {
+border-color:black;
+text-align:center;
+border-collapse: collapse;
+
+}
+.list_table td {
+border-color:gray;
+border-top:1px solid gray;
+text-align:left;
+font-size:12;
+padding-right:3px;
+padding-left:3px;
+padding-top:3px;
+padding-bottom:3px;
+}
+
+.list_table th {
+border-bottom:2px solid black;
+text-align:center;
+font-size:12;
+font-weight:bold;
+padding-right:3px;
+padding-left:3px;
+}
+
+.list_table thead {
+display:table-header-group;
+}
+
+
+.total {
+width:100%;
+}
+.lib {
+width:10.3%;
+}
+.tot {
+text-align:right;
+width:15%;
+}
+.lefttot {
+width:74%;
+}
+.tax {
+width:50%;
+}]]>
+			</field>
+			<field name="html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header" style="border-bottom: 1px solid grey; width: 100%">
+			 <tr>
+                <%
+					zz = helper.get_logo_by_name('logo')
+				%>
+				%if zz and zz[0]:
+					<td>${helper.embed_logo_by_name('logo', height=40)|n}</td>
+                %endif
+            </tr>
+            <tr>
+                <th>${company.name |entity}</th>
+            </tr>
+            <tr>
+				<td>
+					${company and company.company_registry and (u'Reģ.Nr. ' + company.company_registry + ' |') or ''|entity}
+					${company and company.street and (company.street + ',') or ''|entity}
+					${company and company.city and (company.city + ',') or ''|entity}
+					${company and company.zip and (company.zip + ',') or ''|entity},
+					${company.country_id and company.country_id.name or ''|entity}
+					${company and company.phone and (u' | tālr.:' + company.phone) or ''|entity}
+					${company and company.fax and (u' | fakss.:' + company.fax) or ''|entity}
+					${company and company.email and (u' | e-pasts:' + company.email) or ''|entity}
+				</td>
+            </tr>
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+			</field>
+			<field name="footer_html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table style="border-top: 1px solid grey; width: 100%">
+              <tr >
+                <td style="text-align:right;font-size:10;">Lapa <span class="page"/></td>
+                <td style="text-align:left;font-size:10;" width="5%">  no <span class="topage"/></td>
+            </tr>
+        </table>
+    </body>
+</html>]]>
+			</field>
+		</record>
+		<record id="ir_header_img_logo" model="ir.header_img">
+			<field eval="&quot;&quot;&quot;logo&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;png&quot;&quot;&quot;" name="type"/>
+        </record>
+        <record id="ir_header_img_logo_text" model="ir.header_img">
+			<field eval="&quot;&quot;&quot;logo_text&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;png&quot;&quot;&quot;" name="type"/>
+        </record>
+	</data>
+</openerp>

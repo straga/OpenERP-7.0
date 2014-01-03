@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="mr_virtual_counters_form_view" model="ir.ui.view">
+        <field name="name">mr.virtual.counters.form</field>
+        <field name="model">mr.virtual.counters</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Product Size">
+                <field name="sequence"/>
+                <field name="parent_counter_id"/>
+                <field name="operation_type"/>
+            </form>
+        </field>
+    </record>
+
+</data>
+</openerp>
+

@@ -1,0 +1,24 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_size_dsk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-09-16 08:55+0000\n"
+"PO-Revision-Date: 2011-09-16 08:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: aimax_pressform
+#: field:product.apf_partner_id,width:0
+msgid "Owner"
+msgstr "Владелец"
+
+
+

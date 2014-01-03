@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+    <record id="account_fidavista_import_view" model="ir.ui.view">
+      <field name="name">Import FiDAViSta File</field>
+      <field name="model">account.fidavista.import</field>
+      <field name="priority">1</field>
+      <field name="arch" type="xml">
+        <form string="Import FiDAViSta File" version="7.0">
+	        <sheet>
+	            <field name="imported_statements" readonly="1">
+		            <tree colors="red:wrong_balance==True;blue:wrong_balance==False">
+		                <field name="wrong_balance" invisible="1"/>
+		                <field name="last_statement"/>
+		                <field name="last_balance_end"/>
+		            </tree>
+	            </field>
+                <group col="2">
+		            <field name="fidavista_fname" invisible="1"/>
+                    <field name="fidavista_data" filename="fidavista_fname" on_change="onchange_fidavista_data(fidavista_data,fidavista_fname)"/>
+                    <field name="period_id"/>
+		            <field name="wrong_balance" invisible="1"/>
+                </group>
+	            <field name="importing_statements" readonly="1">
+		            <tree colors="red:wrong_balance==True;blue:wrong_balance==False">
+		                <field name="wrong_balance" invisible="1"/>
+		                <field name="current_statement"/>
+		                <field name="current_balance_start"/>
+		            </tree>
+	            </field>
+                <group attrs="{'invisible':[('wrong_balance','=',False)]}">
+		            <p colspan="2"><font color="red"><b>Balances do not match!</b></font></p>
+                    <p colspan="2"><font color="red">The Ending Balance of the last Bank Statement (by date) imported for one of the the Bank Accounts is not equal to the Starting Balance of this document.</font></p>
+		            <field name="flag"/>
+                </group>
+                <footer>
+                    <button name="fidavista_parsing" string="Import" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+	        </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_account_fidavista_import" model="ir.actions.act_window">
+      <field name="name">Import FiDAViSta File</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">account.fidavista.import</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="view_id" ref="account_fidavista_import_view"/>
+    </record>
+
+    <menuitem name="Import FiDAViSta File" parent="account.menu_finance_bank_and_cash" id="menu_account_fidavista_import" action="action_account_fidavista_import" sequence="10"/>
+
+  </data> 
+</openerp>

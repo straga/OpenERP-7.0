@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <!-- Account Bank Statement Lines Search View Definition -->
+        <record model="ir.ui.view" id="account_bank_statement_line_search_view">
+            <field name="name">account.bank.statement.line.search</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="arch" type="xml">
+            <search string="Account Bank Statement Line Search">
+				<field name="date" string="Date"/>
+                <field name="ref" string="Reference"/>
+            </search>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="account_bank_statement_line_tree_view">
+            <field name="name">account.bank.statement.line.tree</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="arch" type="xml">
+                <tree string="Account Bank Statement Lines">
+					<field name="date"/>
+					<field name="name"/>
+					<field name="ref"/>
+					<field name="partner_id"/>
+					<field name="type"/>
+					<field name="account_id"/>
+					<field name="analytic_account_id"/>
+					<field name="amount"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_account_bank_statement_line_form" model="ir.actions.act_window">
+            <field name="name">Account Bank Statement Lines</field>
+            <field name="res_model">account.bank.statement.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="account_bank_statement_line_search_view"/>
+            <field name="context">{}</field>
+        </record>
+    <!-- Wizard's View Definition -->
+        <record id="account_cash_order_report_l10n_lv_view" model="ir.ui.view">
+            <field name="name">Cash Register's Order Report</field>
+            <field name="model">account.cash.order.report</field>
+            <field name="arch" type="xml">
+            	<form string="Report Options" version="7.0">
+					<label string="Print an order from Cash Register" colspan="4"/>
+					<separator string="" colspan="8"/>
+					<group col="2">
+						<field name="report_line_ids" colspan="4">
+							<tree>
+								<field name="date"/>
+								<field name="name"/>
+								<field name="ref"/>
+								<field name="partner_id"/>
+								<field name="type"/>
+								<field name="account_id"/>
+								<field name="analytic_account_id"/>
+								<field name="amount"/>
+							</tree>
+						</field>
+					</group>
+					<separator string="" colspan="4"/>
+                	<footer>
+						<button name="%(report_account_cash_order_l10n_lv_html)d" string="Print" type="action" default_focus="1" class="oe_highlight"/>
+                	    <button special="cancel" string="Cancel" class="oe_link"/>
+                	</footer>
+            	</form>
+            </field>
+        </record>
+         <act_window name="Order form Cash Register"            
+            res_model="account.cash.order.report"
+            src_model="account.bank.statement"
+            view_mode="form"
+            target="new"
+            key2="client_print_multi"
+			context="{'journal_id.type': 'cash'}"    
+            id="action_view_account_cash_order_report_l10n_lv"/>
+    </data>
+</openerp>

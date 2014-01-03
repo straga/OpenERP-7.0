@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_wizard_fidavista_config_form" model="ir.ui.view">
+            <field name="name">Set Your FiDAViSta Configuration</field>
+            <field name="model">wizard.fidavista.config</field>
+            <field name="inherit_id" ref="base.res_config_view_base"/>
+            <field name="arch" type="xml">
+		<data>
+                    <form position="attributes" version="7.0">
+                    	<attribute name="string">FiDAViSta Transaction Type Configuration</attribute>
+                    </form>
+                    <group string="res_config_contents" position="replace">
+                	<separator string="Configure Transaction Types"/>
+                	<p>You need to configure Transaction Types in order to import data from a FiDAViSta file. These types are used to select Accounts for Bank Statement Lines, if there is no Partner in a transaction (or the Partner is not defined in the system).</p>
+                	<p>Press 'Apply', and your FiDAViSta Transaction Types will be created automatically.</p>
+                    </group>
+		</data>
+            </field>
+        </record>
+
+    <record id="action_wizard_fidavista_config" model="ir.actions.act_window">
+        <field name="name">Set Your FiDAViSta Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.fidavista.config</field>
+        <field name="view_id" ref="view_wizard_fidavista_config_form"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record model="ir.actions.todo" id="config_auto_wizard_fidavista">
+        <field name="action_id" ref="action_wizard_fidavista_config"/>
+        <field name="type">automatic</field>
+    </record>
+
+    </data>
+</openerp>

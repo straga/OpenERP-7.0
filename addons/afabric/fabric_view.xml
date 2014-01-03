@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="fabric_form_view" model="ir.ui.view">
+            <field name="name">fabric.form</field>
+            <field name="model">fabric</field>
+            <field name="arch" type="xml">
+                <form string="Fabric" version="7.0">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done" statusbar_colors='{"draft":"red","done":"blue"}'/>
+                    </header>
+
+                    <group>
+                        <group>
+                            <group >
+                                <field name="name" placeholder="Name"/>
+                                <field name="id_fabric"/>
+
+
+
+                                <!-- <field name="link_product" /> -->
+                            </group>
+                            <!--
+                            <group >
+                                <field name="fsize_h" />
+                               <field name="fsize_w" />
+                                <field name="fsize_z" />
+                            </group>
+                            -->
+                        </group >
+                    </group >
+
+
+                    <notebook>
+
+                        <!--
+                        <page string="Circulation">
+                            <group >
+                                <field name="link_fabric_circulation" nolabel="1" colspan="6" widget="one2many_list"  >
+                                    <tree string="Circulation" editable="bottom">
+
+                                        <field name="circulation_seq" attrs="{'readonly':True}" />
+                                        <field name="circulation_qty"/>
+                                        <field name="circulation_unit_cost"/>
+                                        <field name="circulation_total_cost"/>
+                                        <field name="description"/>
+
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                       -->
+
+                        <page string="Design">
+                        <group >
+                            <field name="link_fdesign" nolabel="1" colspan="3"   >
+                              <!--
+                                <tree string="Design">
+                                    <field name="id_design"/>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                </tree>
+                                -->
+                            </field>
+                        </group>
+                        </page >
+                    </notebook>
+                    <field name="description" placeholder="describe the product characteristics..."/>
+                </form>
+            </field>
+</record>
+
+
+
+
+<record model="ir.actions.act_window" id="action_fabric_form">
+        <field name="name">fabric</field>
+        <field name="res_model">fabric</field>
+
+</record>
+
+
+<menuitem
+        name="Fabric"
+        icon="terp-project"
+        id="fabric_terp_menu" />
+    <menuitem
+            name="Main"
+            parent="fabric_terp_menu"
+            id="fabric_menu"/>
+
+    <menuitem
+            name="Fabric Project"
+            action="action_fabric_form"
+            id="fabric_sub_menu"
+            groups="base.group_no_one"
+            parent="fabric_menu"/>
+
+</data>
+</openerp>
+

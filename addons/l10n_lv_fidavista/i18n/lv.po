@@ -1,0 +1,318 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_lv_fidavista
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-16 06:54+0000\n"
+"PO-Revision-Date: 2013-04-16 06:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lv_fidavista
+#: model:ir.actions.act_window,name:l10n_lv_fidavista.action_fidavista_transaction_type_form
+#: model:ir.ui.menu,name:l10n_lv_fidavista.menu_fidavista_transaction_type
+msgid "Transaction Types"
+msgstr "Transakciju tipi"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Bankas Konti"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,note:0
+msgid "Log"
+msgstr "Piezīmes"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.imported.statements,wizard_id:0
+#: field:account.fidavista.importing.statements,wizard_id:0
+msgid "Wizard"
+msgstr "Vednis"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.import:0
+msgid "Balances do not match!"
+msgstr "Bilances nesakrīt!"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.transaction.type:0
+#: model:ir.model,name:l10n_lv_fidavista.model_account_fidavista_transaction_type
+msgid "FiDAViSta Transaction Types"
+msgstr "FiDAViSta transakciju tipi"
+
+#. module: l10n_lv_fidavista
+#: model:ir.ui.menu,name:l10n_lv_fidavista.menu_fidavista_configuration
+msgid "FiDAViSta"
+msgstr "FiDAViSta"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,flag:0
+msgid "Continue Anyway"
+msgstr "Turpināt, neņemot vērā"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.imported.statements,last_statement:0
+msgid "Last statements for selected accounts"
+msgstr "Pēdējie izraksti izvēlētajiem bankas kontiem"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_account_fidavista_importing_statements
+msgid "account.fidavista.importing.statements"
+msgstr "account.fidavista.importing.statements"
+
+#. module: l10n_lv_fidavista
+#: field:account.bank.statement.line,partner_name:0
+msgid "Partner Name"
+msgstr "Partnera vārds"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.import:0
+msgid "Import"
+msgstr "Ielādēt"
+
+#. module: l10n_lv_fidavista
+#: help:account.fidavista.transaction.type,io:0
+msgid "Controls, whether the Amount of the transaction is positive or negative."
+msgstr "Nosaka, vai transakcijas lielums ir pozitīvs vai negatīvs."
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.transaction.type:0
+#: field:account.fidavista.transaction.type,type:0
+msgid "Type"
+msgstr "Tips"
+
+#. module: l10n_lv_fidavista
+#: model:ir.ui.menu,name:l10n_lv_fidavista.menu_account_finance_configuration
+msgid "Finances"
+msgstr "Finanses"
+
+#. module: l10n_lv_fidavista
+#: field:res.partner.bank,bank_statement_ids:0
+msgid "Bank Statements"
+msgstr "Bankas izraksti"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.transaction.type,description:0
+msgid "Description"
+msgstr "Apraksts"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.importing.statements,current_balance_start:0
+msgid "Starting Balance"
+msgstr "Sākuma bilance"
+
+#. module: l10n_lv_fidavista
+#: view:res.partner:0
+msgid "{'readonly': [('id','=',False)]}"
+msgstr "{'readonly': [('id','=',False)]}"
+
+#. module: l10n_lv_fidavista
+#: view:wizard.fidavista.config:0
+msgid "Configure Transaction Types"
+msgstr "Transakcijas tipu konfigurācija"
+
+#. module: l10n_lv_fidavista
+#: view:wizard.fidavista.config:0
+msgid "FiDAViSta Transaction Type Configuration"
+msgstr "FiDAViSta transakcijas tipu konfigurācija"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,wrong_balance:0
+#: field:account.fidavista.imported.statements,wrong_balance:0
+#: field:account.fidavista.importing.statements,wrong_balance:0
+msgid "Wrong Balance"
+msgstr "Nepareiza bilance"
+
+#. module: l10n_lv_fidavista
+#: view:wizard.fidavista.config:0
+msgid "res_config_contents"
+msgstr "res_config_contents"
+
+#. module: l10n_lv_fidavista
+#: help:account.fidavista.import,flag:0
+msgid "If checked, continues without comparing balances."
+msgstr "Ja atķeksēts, turpina bez bilanču salīdzināšanas."
+
+#. module: l10n_lv_fidavista
+#: field:account.bank.statement.line,partner_bank_account:0
+msgid "Partner Bank Account Number"
+msgstr "Partnera bankas konta numurs"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.import:0
+msgid "The Ending Balance of the last Bank Statement (by date) imported for one of the the Bank Accounts is not equal to the Starting Balance of this document."
+msgstr "Kāda bankas konta pēdējā (pēc datuma) ielādētā bankas izraksta noslēdzošā bilance nesakrīt ar šajā dokumentā norādīto sākuma bilanci."
+
+#. module: l10n_lv_fidavista
+#: help:account.fidavista.import,period_id:0
+msgid "Select a Period for the Bank Statement."
+msgstr "Izvēlietes bankas izraksta periodu."
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.transaction.type:0
+#: field:account.fidavista.transaction.type,account_id:0
+msgid "Account"
+msgstr "Konts"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.imported.statements,last_balance_end:0
+msgid "Ending Balance"
+msgstr "Noslēdzošā bilance"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.transaction.type:0
+msgid "FiDAViSta Transaction Type Search"
+msgstr "FiDAViSta transakcijas tipu meklēšana"
+
+#. module: l10n_lv_fidavista
+#: view:account.bank.statement:0
+msgid "{'default_name': partner_name and partner_name or '', 'default_vat': partner_reg_id and partner_reg_id or '', 'default_comment': partner_bank_account and ('Bank Account: '+partner_bank_account) or ''}"
+msgstr "{'default_name': partner_name and partner_name or '', 'default_vat': partner_reg_id and partner_reg_id or '', 'default_comment': partner_bank_account and ('Bank Account: '+partner_bank_account) or ''}"
+
+#. module: l10n_lv_fidavista
+#: field:account.bank.statement,bank_account_id:0
+msgid "Bank Account"
+msgstr "Bankas konts"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.import:0
+#: model:ir.actions.act_window,name:l10n_lv_fidavista.action_account_fidavista_import
+#: model:ir.model,name:l10n_lv_fidavista.model_account_fidavista_import
+#: model:ir.ui.menu,name:l10n_lv_fidavista.menu_account_fidavista_import
+msgid "Import FiDAViSta File"
+msgstr "Ielādēt FiDAViSta failu"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.transaction.type,io:0
+msgid "I/O"
+msgstr "Ien./Iz."
+
+#. module: l10n_lv_fidavista
+#: view:wizard.fidavista.config:0
+msgid "Press 'Apply', and your FiDAViSta Transaction Types will be created automatically."
+msgstr "Spiediet 'Apply', un Jūsu FiDAViSta transakciju tipi tiks izveidoti automātiski."
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,importing_statements:0
+#: field:account.fidavista.importing.statements,current_statement:0
+msgid "Statements to Import"
+msgstr "Izraksti, kurus ielādēt"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_res_partner
+msgid "Partner"
+msgstr "Partneris"
+
+#. module: l10n_lv_fidavista
+#: model:ir.ui.menu,name:l10n_lv_fidavista.menu_action_res_bank_form_fidavista
+msgid "Banks"
+msgstr "Bankas"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,fidavista_fname:0
+msgid "FiDAViSta Filename"
+msgstr "FiDAViSta faila nosaukums"
+
+#. module: l10n_lv_fidavista
+#: field:account.bank.statement.line,partner_reg_id:0
+msgid "Partner Registration Number"
+msgstr "Partner reģistrācijas numurs"
+
+#. module: l10n_lv_fidavista
+#: view:wizard.fidavista.config:0
+msgid "You need to configure Transaction Types in order to import data from a FiDAViSta file. These types are used to select Accounts for Bank Statement Lines, if there is no Partner in a transaction (or the Partner is not defined in the system)."
+msgstr "Lai varētu ielādēt datus no FiDAViSta faila, nepieciešams konfigurēt transakciju tipus. Šie tipi tiek izmantoti bankas izrakstu transakciju kontu izvēlē gadījumos, kad transakcijā nav minēts partneris (vai arī minētais partneris nav atrodams sistēmā)."
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_account_fidavista_imported_statements
+msgid "account.fidavista.imported.statements"
+msgstr "account.fidavista.imported.statements"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Konta izraksta rinda"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,fidavista_data:0
+msgid "FiDAViSta File"
+msgstr "FiDAViSta fails"
+
+#. module: l10n_lv_fidavista
+#: help:account.fidavista.transaction.type,type:0
+msgid "Enter FiDAViSta Transaction Type Codes or Transaction Type Names. Please separate by a comma and a space (', '), otherwise the Type won't be found, when importing FiDAViSta file."
+msgstr "Ievadiet FiDAViSta transakciju tipu kodus vai nosaukumus. Lūdzu, atdaliet tos ar komatu un atstarpi (', '), citādi FiDAViSta faila ielādēšanas brīdī tips netiks atrasts."
+
+#. module: l10n_lv_fidavista
+#: model:ir.actions.act_window,name:l10n_lv_fidavista.action_wizard_fidavista_config
+msgid "Set Your FiDAViSta Configuration"
+msgstr "Uzstādiet savu FiDAViSta konfigurāciju"
+
+#. module: l10n_lv_fidavista
+#: model:ir.actions.act_window,help:l10n_lv_fidavista.action_fidavista_transaction_type_form
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create a FiDAViSta Transaction Type. \n"
+"              </p><p>\n"
+"               	These Types will be used to select accounts and types for Bank Statement Lines, when importing a 			FiDAViSta file.\n"
+"              </p>\n"
+"   	    "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Noklikšķiniet, lai izveidotu FiDAViSta transakcijas tipu. \n"
+"              </p><p>\n"
+"               	Šie tipi tiks izmantoti kontu un tipu izvēlē bankas izraksta transakcijām, ielādējot FiDAViSta 				failu.\n"
+"              </p>\n"
+"   	    "
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,period_id:0
+msgid "Period"
+msgstr "Periods"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Bankas konta izraksts"
+
+#. module: l10n_lv_fidavista
+#: model:ir.model,name:l10n_lv_fidavista.model_wizard_fidavista_config
+msgid "wizard.fidavista.config"
+msgstr "wizard.fidavista.config"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.transaction.type:0
+msgid "FiDAViSta Transaction Type result"
+msgstr "FiDAViSta transakcijas tipu rezultāts"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.importing.statements,current_statement:0
+msgid "Statements to import"
+msgstr "Izraksti, kurus ielādēt"
+
+#. module: l10n_lv_fidavista
+#: view:account.fidavista.import:0
+msgid "Cancel"
+msgstr "Atcelt"
+
+#. module: l10n_lv_fidavista
+#: field:account.fidavista.import,imported_statements:0
+msgid "Imported Statements"
+msgstr "Ielādētie izraksti"
+
+#. module: l10n_lv_fidavista
+#: field:account.bank.statement.line,transaction_type:0
+msgid "Trans. Type Code"
+msgstr "Trans. tipa kods"
+
+#. module: l10n_lv_fidavista
+#: help:account.fidavista.transaction.type,account_id:0
+msgid "The account for the transaction."
+msgstr "Transakcijai paredzētais konts."
+

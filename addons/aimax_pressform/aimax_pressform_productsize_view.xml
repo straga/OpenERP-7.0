@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="aimax_pressform_productsize_form_view" model="ir.ui.view">
+            <field name="name">ampf.productsize.form</field>
+            <field name="model">ampf.productsize</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Product Size">
+                    <separator string="Product Size" colspan="4"/>
+                    <field colspan="4" name="name"/>
+                    <separator string="WxHxH" colspan="4"/>
+                    <field name="ampf_productsize_diametr"/>
+                    <separator string="WxHxH" colspan="4"/>
+                    <field name="ampf_productsize_width"/>
+                    <newline/>
+                    <field name="ampf_productsize_lenght"/>
+                    <newline/>
+                    <field name="ampf_productsize_height"/>
+                    <separator string="Windows" colspan="4"/>
+                    <field name="ampf_productsize_windows"/>
+                    <newline/>
+                    <field name="ampf_productsize_windows_diametr"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

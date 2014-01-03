@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+<!-- Access groups -->
+
+    <record id="base.group_hr_reader" model="res.groups">
+        <field name="name">HR Reader</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="base.group_hr_dept_manager" model="res.groups">
+        <field name="name">HR Department Manager</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_reader'))]"/>
+    </record>
+
+    <record id="base.group_hr_instructor" model="res.groups">
+        <field name="name">HR Instructor</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_reader'))]"/>
+    </record>
+
+    <record id="base.group_hr_supervisor" model="res.groups">
+        <field name="name">HR Supervisor</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_reader'))]"/>
+    </record>
+
+</data>
+
+<data noupdate="1">
+
+    <record id="hr_rule_visibility" model="ir.rule">
+        <field name="name">Employees - Public</field>
+        <field ref="model_hr_employee" name="model_id"/>
+        <field name="domain_force">[('visibility','!=','private')]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+</data>
+
+</openerp>

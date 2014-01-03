@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Contract</title>
+    <style type='text/css'>
+      body {
+      padding: 0px;
+      margin: 0px;
+      }
+      div.main-wrapper {
+      width: 100%;
+      overflow: hidden;
+      font-family: Times New Roman;
+      position: relative;
+      font-weight: normal;
+      font-size: 17px;
+      font-style: italic;
+      }
+      table {
+      border-collapse: collapse;
+      }
+      table td {
+      padding: 0px;
+      }
+      p {
+      margin: 2px;
+      }
+
+      h1 {
+      font-family: Times New Roman;      
+      font-weight: bold;
+      font-size: 17px;
+      margin-top: 10px;      
+      margin-bottom: 10px;
+      text-align: center;
+      }
+
+      table.intro-row {
+      width: 100%;
+      }
+      
+      table.intro-row td {
+      width: 50%;
+      text-align: right;
+      }
+
+      table.intro-row td:first-child {
+      text-align: left;
+      }
+
+      p.bold-sep {
+      border-bottom: 2px solid black;
+      width: 100%;
+      text-align: center;
+      }
+
+      p.sep {
+      border-bottom: 1px solid black;
+      width: 100%;      
+      text-align: left;
+      }
+
+      p.sep-centered {
+      text-align: center !important;
+      }
+
+      div.desc {
+      width: 100%;
+      text-align: center;
+      }
+      table.footer-row {
+      width: 100%;
+      }
+      table.footer-row td {
+      width: 25%;
+      text-align: center;
+      }
+      table.footer-row middle-col {
+      width: 50%;
+      }
+      div.sign-place {
+      width: 100%;
+      border-top: 1px solid black;
+      margin-top: 40px;
+      text-align: center;
+      }
+      div.para {
+      margin-bottom: 5px;
+      }
+            
+    </Style>
+  </head>  
+  <body>
+
+    %for contract in objects:
+    <%
+       emp = contract.employee_id
+    %>
+
+    <div class='main-wrapper'>
+      <h1>DARBA  LĪGUMS Nr. ${contract.name}</h1>
+
+      <table class='intro-row'><tr><td>${emp.company_id.partner_id and emp.company_id.partner_id.street or ''} ${emp.company_id.partner_id and emp.company_id.partner_id.street2 or ''} ${emp.company_id.partner_id and emp.company_id.partner_id.city or ''} ${emp.company_id.partner_id and emp.company_id.partner_id.state_id.name or ''} ${emp.company_id.partner_id and emp.company_id.partner_id.zip or ''} ${emp.company_id.partner_id and emp.company_id.partner_id.country_id.name or ''}</td><td>${getLongDateFromField(contract.date_start) or ''}</td></tr></table>
+      <br/>
+      <br/>
+<%
+partner = emp.company_id.partner_id
+line = ''
+if partner == False:
+    line = '___________________________________'
+if (partner != False) and ((partner.street == False) and (partner.street2 == False) and (partner.city == False) and (partner.state_id == False) and (partner.zip == False) and (partner.country_id == False)):
+    line = '___________________________________'
+%>
+      <div class='para'><b>${emp.company_id.name}</b> (reģistrācijas Nr.${emp.company_id.company_registry or '___________'} adrese ${partner and partner.street or ''} ${partner and partner.street2 or ''} ${partner and partner.city or ''} ${partner and partner.state_id.name or ''} ${partner and partner.zip or ''} ${partner and partner.country_id.name or ''}), kuru, saskaņā ar statūtiem, pārstāv ${emp.company_id.responsible_person_position or '____________________'} ${emp.company_id.responsible_person or '____________________'}, turpmāk saukts “Darba  devējs” no vienas puses un 
+      <p class='sep'><b>${emp.name or ''}</b>, p.k. ${emp.identification_id or ''}</p>
+
+      </div>
+      <br/>
+      <div class='para'>Pase Nr. ${emp.passport_id or ''} izdota ${emp.passport_issue_date or ''}</div>
+      <div class='para'>Dzīvo: ${emp.address_declared_id and emp.address_declared_id.street or ''} ${emp.address_declared_id and emp.address_declared_id.city or ''} ${emp.address_declared_id and emp.address_declared_id.state_id.name or ''} ${emp.address_declared_id and emp.address_declared_id.zip or ''} ${emp.address_declared_id and emp.address_declared_id.country_id.name or ''}</div>
+      <div class='para'>Turpmāk saukts “Darbinieks”, no otras puses, noslēdz līgumu:</div>
+
+      <div class='para'>1. DARBINIEKS stājas darbā pie DARBA DEVĒJA un DARBA DEVĒJS pieņem viņu darbā par:</div>
+      <p class='sep'>${emp.job_id and emp.job_id.name or ''}</p>
+
+      <div class='para'>DARBINIEKS uzsāk darbu ar ${emp.contract_id and emp.contract_id.date_start or ''}</div>
+      <div class='para'>DARBINIEKAM noteikts pārbaudes termiņš līdz ${emp.contract_id and emp.contract_id.trial_date_end or ''}</div>
+      <div class='para'>Nolīgtais - nedēļas darba laika ilgums. Darba dienas ilgums pirms svētku dienām saskaņā ar DL 135.pantu.</div>
+      <div class='para'>2. DARBINIEKS uzņemas izpildīt:</div>
+      <div class='para'>2.1.1. pamatdarbā ${emp.contract_id and emp.contract_id.main_duties or ''}</div>
+      %if emp.contract_id and emp.contract_id.additional_duties:
+      <div class='para'>2.1.2. blakusdarbā ${emp.contract_id and emp.contract_id.additional_duties or ''}</div>
+      %endif
+      <div class='para'>2.2. sakarā  ar darba specifiku darbinieks piekrīt darba braucieniem.</div>
+      <div class='para'>2.3. darba vieta - ${emp.department_id and emp.department_id.name}</div>
+      <div class='para'>2.4. DARBINIEKS uzņemas ievērot iekšējās darba kārtības noteikumus un pildīt DARBA DEVĒJA rīkojumus, ievērot darba aizsardzības, drošības tehnikas un darba higiēnas prasības, saudzīgi izturēties pret DARBA DEVĒJA mantu, neizpaust ražošanas, komerciālos un citus noslēpumus.</div>
+      <div class='para'>2.5. DARBINIEKA civiltiesiskā atbildība:</div>
+      <div class='para'>2.5.1. Ja DARBINIEKS bez attaisnojoša iemesla neveic darbu vai arī veic to nepienācīgi vai citādas prettiesiskas, vainojamas rīcības dēļ nodarījis zaudējumus DARBA DEVĒJAM, DARBINIEKAM ir pienākums atlīdzināt DARBA DEVĒJAM radušos zaudējumus.</div>
+      <div class='para'>2.5.2. Ja DARBINIEKS darba līgumā paredzēto darbu uzņemas veikt kā kopparādnieks kopā ar citiem darbiniekiem, atbildība par DARBA DEVĒJAM nodarītiem zaudējumiem ir solidāra.</div>
+      <div class='para'>3. DARBA DEVĒJS uzņemas:</div>
+      <div class='para'>3.1. Nodrošināt taisnīgus, drošus un veselībai nekaitīgus darba apstākļus; pirms stāšanās darbā iepazīstināt DARBINIEKU ar veicamo darbu un tā apstākļiem, iekšējās darba kārtības, darba aizsardzības un citiem noteikumiem.</div>
+      <div class='para'>3.2. Maksāt DARBINIEKAM nolīgto darba samaksu saskaņā ar darba likumdošanas un šā līguma noteikumiem:</div>
+      <div class='para'>3.2.1. Darba algu, stundas tarifa likmi (laika darbā), akorda algu (akorda darbā)</div>
+      <p class='sep'>${emp.contract_id and emp.contract_id.wage or ''}</p>      
+      <div class='para'>3.2.2. Piemaksu par papildu darbu: saskaņā ar ${emp.company_id.name} valdes lēmumu un instrukcijām</div>
+      <div class='para'>3.2.3. Piemaksu par virsstundu darbu, darbu īpašos apstākļos, darbu nedēļas atpūtas laikā vai svētku dienā saskaņā ar DL.</div>
+      <div class='para'>3.2.4. Prēmijas saskaņā ar ${emp.company_id.name} valdes lēmumu.</div>
+      <div class='para'>3.2.5. Cita veida atlīdzība saistībā ar darbu: apmaksāt darba braucienus, kas saistīti ar ${emp.company_id.name} darba specifiku; apmaksāt izdevumus par degvielu un stāvvietām, nepieciešamības gadījumā arī citus izdevumus, kas saistīti ar personīgā autotransporta izmantošanu, ja tie ir saistīti ar ${emp.company_id.name} saimnieciskajiem darījumiem, darba organizāciju un ir iesniegti attaisnojoši dokumenti.</div>
+      <div class='para'>3.3. Darba samaksa tiek veikta beizskaidrā naudā ar pārskaitījumu 1 reizi mēnesī.</div>
+      <div class='para'>3.4. Piešķirt apmaksātu atvaļinājumu:</div>
+      <div class='para'>3.4.1. Ikgadējo atvaļinājumu  četras kalendāra nedēļas; neskaitot svētku dienas.</div>
+      <div class='para'>3.4.2. Papildatvaļinājumu - saskaņā ar DL</div>
+      <div class='para'>4. Darba līgums noslēgts uz nenoteiktu laiku.</div>
+      <div class='para'>5. Darbiniekam ir tiesības slēgt līgumu ar citu darba devēju tikai ar darba devēja piekrišanu.</div>
+      <div class='para'>6. Darbiniekam ir tiesības rakstveidā uzteikt darba līgumu vienu mēnesi iepriekš.</div>
+      <div class='para'>7. Darba līguma nosacījumus var grozīt, DARBINIEKAM un DARBA DEVĒJAM rakstveidā savstarpēji vienojoties.</div>
+      <div class='para'>8. Vienpusēja darba līguma laušana pieļaujama tikai darba likumdošanā paredzētajos gadījumos un kārtībā.</div>
+      <div class='para'>9. Darba strīdi starp DARBA DEVĒJU un DARBINIEKU izšķirami likumā noteiktā kārtībā.</div>
+      <div class='para'>10. Darba līgums sastādīts divos eksemplāros, no kuriem viens glabājas pie DARBA DEVĒJA, otrs – pie DARBINIEKA.</div>
+      <div class='para'>10. Citi nosacījumi:</div>
+      <p class='sep'>${emp.contract_id and emp.contract_id.other_terms or ''}</p>
+      <div class='para'></div>
+      <div class='para'></div>
+      <table class='footer-row'>
+        <tr><td>DARBINIEKS</td><td></td><td>DARBA DEVĒJS</td></tr>
+        <tr><td><div class='sign-place'>paraksts</div></td><td class='middle-col'></td><td><div class='sign-place'>paraksts</div></td></tr>
+        <tr><td>${emp.name}</td><td class='middle-col'></td><td>${emp.company_id.responsible_person or '____________________'}</td></tr>
+      </table>
+    </div>
+    %endfor
+  </body>
+</html>

@@ -1,0 +1,29 @@
+Klase,Lauka nosaukums sistēmā,Lauka nosaukums datubāzē,Lauka tips,Papildu norādes,Fidavista XML tagi
+account.bank.statement,Reference,name (obligāts),fields.char,,<Timestamp>
+,Date,date (obligāts),fields.date,,<PrepDate> 
+,Journal,journal_id (obligāts),fields.many2one,account.journal,Vajadzīgs tikai viens – bank tipa žurnāls – nav jāņem no XML
+,Period,period_id (obligāts),fields.many2one,account.period,"Ieliekas arī automātiski, ieliekot datumu"
+,Starting Balance,balance_start,fields.float,,<OpenBal> 
+,Ending Balance,balance_end_real,fields.float,,<CloseBal> 
+,Computed Balance,balance_end,fields.function,_end_balance,"Funkcionālais lauks, nav jēgas izdarīt ierakstu"
+,Company,company_id,fields.related,journal_id,"Saistītais lauks (ar Žurnālu), nav jēgas izdarīt ierakstu"
+,Statement lines,line_ids,fields.one2many,account.bank.statement.line,Tās būs izveidotās rindiņas <TrxSet>
+,Entry lines,move_line_ids,fields.one2many,account.move.line,"Pieņemu, ka kontējumu rindiņas"
+,Status,state (obligāts),fields.selection,,Tiek likts automātiski
+,Currency,currency,fields.function,_currency,Funkcionālais lauks
+,Account used in this journal,account_id,fields.related,journal_id,"Saistītais lauks (ar Žurnālu), nav jēgas izdarīt ierakstu"
+,,,,,
+account.bank.statement.line,OBI,name (obligāts),fields.char,,<PmtInfo> 
+,Date,date (obligāts),fields.date,,<BookDate> 
+,Amount,amount,fields.float,,<AccAmt>
+,Type,type (obligāts),fields.selection,,"Standartā ir General, ja netiek norādīts cits"
+,Partner,partner_id,fields.many2one,res.partner,
+,Account,account_id (obligāts),fields.many2one,account.account,Tas būs Temporary Account
+,Statement,statement_id (obligāts),fields.many2one,account.bank.statement,Sasaiste ar Bank Statement
+,Journal,journal_id,fields.related,statement_id,Sasaistītais lauks (ar Statement)
+,Analytic Account,analytic_account_id,fields.many2one,account.analytic.account,
+,Moves,move_ids,fields.many2many,account.move,"Pieņemu, ka saistītas ar kontējumiem"
+,Reference,ref,fields.char,,<BankRef> 
+,Notes,note,fields.text,,
+,Sequence,sequence,fields.integer,,Statement Lines numerācija pēc kārtas (izmantota write un create metodēs)
+,Company,company_id,fields.related,statement_id,Saistītais lauks ar Statement

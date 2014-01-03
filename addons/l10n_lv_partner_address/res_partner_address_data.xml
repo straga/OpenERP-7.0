@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_declared">
+      <field name="name">Declared Address</field>
+      <field name="for">physical</field>
+    </record>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_residence">
+      <field name="name">Residence Address</field>
+      <field name="for">physical</field>
+    </record>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_working">
+      <field name="name">Working Address</field>
+      <field name="for">physical</field>
+    </record>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_legal">
+      <field name="name">Legal Address</field>
+      <field name="for">juridical</field>
+    </record>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_office">
+      <field name="name">Office Address</field>
+      <field name="for">juridical</field>
+    </record>
+
+    <record model="res.partner.address.type" id="res_partner_address_type_delivery">
+      <field name="name">Delivery Address</field>
+      <field name="for">juridical</field>
+    </record>
+
+  </data>
+</openerp>

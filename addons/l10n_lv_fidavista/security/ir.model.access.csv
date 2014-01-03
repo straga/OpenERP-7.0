@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_fidavista_config,wizard.fidavista.config,model_wizard_fidavista_config,account.group_account_user,1,1,1,1
+,,,,,,,
+access_account_bank_statement_user,account.bank.statement,model_account_bank_statement,account.group_account_user,1,1,1,1
+access_account_bank_statement_line_user,account.bank.statement.line,model_account_bank_statement_line,account.group_account_user,1,1,1,1
+,,,,,,,
+access_account_fidavista_transaction_type,account.fidavista.transaction.type,model_account_fidavista_transaction_type,account.group_account_user,1,1,1,1
+,,,,,,,
+access_res_partner_bank_user,res.partner.bank,model_res_partner_bank,account.group_account_user,1,1,1,1
+access_res_partner_user,res.partner,model_res_partner,account.group_account_user,1,1,1,1
+,,,,,,,
+access_account_fidavista_import,account.fidavista.import,model_account_fidavista_import,account.group_account_user,1,1,1,1
+access_account_fidavista_imported_statements,account.fidavista.imported.statements,model_account_fidavista_imported_statements,account.group_account_user,1,1,1,1
+access_account_fidavista_importing_statements,account.fidavista.importing.statements,model_account_fidavista_importing_statements,account.group_account_user,1,1,1,1
+,,,,,,,
+access_account_fidavista_export,account.fidavista.export,model_account_fidavista_export,account.group_account_user,1,1,1,1
+access_account_fidavista_export_payments,account.fidavista.export.payments,model_account_fidavista_export_payments,account.group_account_user,1,1,1,1

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_aimax_productsize_user","ampf.productsize salesman","model_ampf_productsize","base.group_sale_salesman",1,0,0,0
+"access_aimax_productsize_manage","ampf.productsize manager","model_ampf_productsize","base.group_sale_manager",1,1,1,1
+"access_aimax_pfoptions_user","ampf.pfoptions salesman","model_ampf_pfoptions","base.group_sale_salesman",1,0,0,0
+"access_aimax_pfoptions_manage","ampf.pfoptions manager","model_ampf_pfoptions","base.group_sale_manager",1,1,1,1

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report auto="False"
+                id="report_account_invoice_list_l10n_lv_html"
+                model="account.invoice"
+                name="l10n_lv_account.invoice_list"
+                file="l10n_lv_account/report/report_account_invoice_list_html.mako"
+                string="List of Invoices"
+                report_type="webkit"
+				menu="False"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+        <report auto="False"
+                id="report_account_chart_l10n_lv_html"
+                model="account.account"
+                name="l10n_lv_account.chart"
+                file="l10n_lv_account/report/report_account_chart_html.mako"
+                string="Chart of Accounts"
+                report_type="webkit"
+				menu="False"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+		<report auto="False"
+                id="report_account_invoice_l10n_lv"
+                model="account.invoice"
+                name="l10n_lv_account.invoice"
+                file="l10n_lv_account/report/report_account_invoice.html"
+                string="Invoice html"
+                report_type="webkit"
+				menu="True"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_inv"/>
+		<report auto="False"
+                id="report_account_invoice_out_l10n_lv"
+                model="account.invoice"
+                name="l10n_lv_account.invoice.out"
+                file="l10n_lv_account/report/report_account_invoice_out_html.mako"
+                string="Invoice to send"
+                report_type="webkit"
+				menu="True"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_inv"/>
+        <report auto="False"
+                id="report_account_cash_order_l10n_lv_html"
+                model="account.cash.order.report"
+                name="l10n_lv_account.cash_order"
+                file="l10n_lv_account/report/report_account_cash_order_html.mako"
+                string="Order from Cash Register"
+                report_type="webkit"
+				menu="False"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+        <report auto="False"
+                id="report_account_cash_book_l10n_lv_html"
+                model="account.bank.statement"
+                name="l10n_lv_account.cash_book"
+                file="l10n_lv_account/report/report_account_cash_book_html.mako"
+                string="Cash Book"
+                report_type="webkit"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+    </data>
+</openerp>

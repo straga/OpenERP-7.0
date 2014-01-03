@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<!-- hr.contract views -->
+
+      <record id="hr_contract_view_tree_inherit_l10n_lv_hr" model="ir.ui.view">
+        <field name="name">hr.contract.view.tree.inherit.l10n</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+        <field name="arch" type="xml">
+          <field name="employee_id" position="replace">
+            <field name="employee_name"/>
+            <field name="employee_surname"/>
+          </field>          
+        </field>
+      </record>
+
+      <record id="hr_hr_contract_view_form_13" model="ir.ui.view">
+        <field name="name">hr.contract.view.form13</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="/form/sheet/notebook/page[@name='information']/group/group[@name='duration_group']" position="after">
+		<group name="duties_group" string="Duties">
+            	    <field name="main_duties" colspan="2"/>
+            	    <field name="additional_duties" colspan="2"/>
+            	    <field name="other_terms" colspan="2"/>
+		</group>
+          </xpath>          
+        </field>    
+      </record>
+
+	<!-- hr.employee form view -->
+
+      <record id="hr_view_employee_form_inherit_l10n_lv" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.l10n</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+        <field name="arch" type="xml">
+
+	<!-- Working Address, Declared Address, Residence Address -->
+
+          <xpath expr="/form/sheet/notebook/page[@string='Public Information']/group/group[@string='Contact Information']/field[@name='address_id']" position="replace">
+            <field name="address_work_id" domain="[('type.id','=',3)]" context="{'default_type': 3}"/>
+          </xpath>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Contact Information']/field[@name='address_home_id']" position="replace">
+            <field name="address_declared_id" domain="[('type.id','=',1)]" context="{'default_type': 1}"/>
+            <field name="address_residence_id" domain="[('type.id','in',[1,2])]" context="{'default_type': 2}"/>
+          </xpath>
+
+	<!-- Name, Surname -->
+
+          <xpath expr="/form/sheet/div[@class='oe_title']/label[@for='name']" position="attributes">
+            <attribute name="string">Full Name</attribute>
+          </xpath>
+
+          <xpath expr="/form/sheet/div[@class='oe_title']/label[@for='category_ids']" position="before">
+		<group>
+		    <field name="employee_name" on_change="onchange_employee_name_surname(employee_name,employee_surname)"/>
+		    <field name="employee_surname" on_change="onchange_employee_name_surname(employee_name,employee_surname)"/>
+		</group>
+          </xpath>
+
+          <xpath expr="/form/sheet/div[@class='oe_title']/h1/field[@name='name']" position="attributes">
+            <attribute name="on_change">onchange_name(name)</attribute>
+          </xpath>
+
+	<!-- Additional fields. -->
+
+          <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Citizenship &amp; Other Info']/field[@name='passport_id']" position="after">
+            <field name="passport_issue_date"/>            
+            <field name="passport_expire_date"/>            
+          </xpath>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Public Information']/group/group[@string='Position']/field[@name='manager']" position="after">
+		<field name="introductory_done" groups="base.group_hr_instructor"/>
+	  </xpath>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Birth']" position="after">
+		<group string="Contract Information">
+            	    <field name="contract_id" groups="base.group_hr_manager,base.group_hr_reader"/>
+            	    <field name="contract_date_start" readonly="1" groups="base.group_hr_manager,base.group_hr_reader"/>
+		</group>
+          </xpath>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Personal Information']" position="after">
+            <page string="CV" groups="base.group_hr_manager">
+              <field name="cv_text" nolabel="1"/>
+            </page>
+          </xpath>
+
+	<!-- Removed fields -->
+
+          <xpath expr="/form/sheet/notebook/page[@string='Personal Information']/group/group[@string='Citizenship &amp; Other Info']/field[@name='otherid']" position="replace"/>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Public Information']/group/group[@string='Contact Information']/field[@name='work_location']" position="replace"/>
+
+          <xpath expr="/form/sheet/notebook/page[@string='Public Information']/group/group[@string='Position']/field[@name='coach_id']" position="replace"/>
+
+	<!-- Field parameters -->
+
+	<xpath expr="/form/sheet/notebook/page[@string='Public Information']/group/group[3]/field[@name='user_id']" position="attributes">
+	    <attribute name="context">{'default_name': name}</attribute>
+	</xpath>
+
+        </field>
+      </record>
+
+	<!-- hr.employee tree view -->
+
+      <record id="view_employee_tree_inherit_l10n_lv" model="ir.ui.view">
+        <field name="name">hr.employee.tree.inherit.l10n.lv</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+          <field name="name" position="replace">
+            <field name="employee_name"/>
+	    <field name="employee_surname"/>
+          </field>
+          <field name="parent_id" position="replace"/>
+        </field>
+      </record>
+
+	<!-- hr.employee kanban view -->
+
+      <record id="hr_kanban_view_employees_inherit_l10n_lv" model="ir.ui.view">
+        <field name="name">hr.employess.kanban.inherit.l10n.lv</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+	  <data>
+	    <xpath expr="/kanban/templates/t[@t-name='kanban-box']/div[@class='oe_employee_vignette']/div[@class='oe_employee_details']/h4/a[@type='open']/t[@t-if='record.login.raw_value']" position="attributes">
+		<attribute name="groups">base.group_hr_manager</attribute>
+	    </xpath>
+	  </data>
+	</field>
+      </record>
+
+	<!-- Group access rights for already existing menuitems -->
+
+      <menuitem action="hr_contract.action_hr_contract" id="hr_contract.hr_menu_contract" parent="hr.menu_hr_main" name="Contracts" sequence="4" groups="base.group_hr_manager,base.group_hr_reader"/>
+
+      <menuitem id="hr.menu_hr_configuration" name="Configuration" parent="hr.menu_hr_root" groups="base.group_hr_manager,base.group_hr_reader" sequence="50"/>
+
+	<!-- Deleting the simple user form in order to create a new user from employee -->
+
+	<delete model="ir.ui.view" id="base.view_users_simple_form"/>
+
+    </data>
+</openerp>

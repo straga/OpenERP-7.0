@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!--  Form View   Stage-->
+
+<record id="fdstage_form_view" model="ir.ui.view">
+            <field name="name">fdstage.form</field>
+            <field name="model">fdstage</field>
+
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Stage">
+
+                    <group string="Stage">
+                        <field name="fdstage_seq"/>
+                        <field name="name" placeholder="Name"/>
+
+                        <field name="description"/>
+                    </group>
+
+                    <newline/>
+
+                    <group string="Components">
+
+                        <field colspan="4" name="fdstage_lines_ids" nolabel="1">
+                            <tree string="stage lines">
+                                <field name="lines_seq"/>
+                                <field name="name"/>
+                                <field name="link_product" on_change="onchange_product_id(link_product, name, context)" class="oe_inline"/>
+                                <field name="product_uom" class="oe_inline" on_change="onchange_uom(link_product, product_uom)" groups="product.group_uom"/>
+                                <field name="req_type"/>
+
+                                <field name="cost_type"/>
+                                <field name="qty"/>
+
+                            </tree>
+
+                        </field>
+                    </group>
+
+
+                </form>
+            </field>
+</record>
+
+    <!--   Tree View -->
+
+     <record id="fdstage_list_view" model="ir.ui.view">
+         <field name="name">fdstage.tree</field>
+         <field name="model">fdstage</field>
+         <field name="arch" type="xml">
+             <tree string="Stages">
+                 <field name="fdstage_seq"/>
+                 <field name="name"/>
+                 <field name="description"/>
+             </tree>
+         </field>
+     </record>
+
+
+ <!-- Lines -->
+    <record id="fdstage_lines_form_view" model="ir.ui.view">
+        <field name="name">fdstage.lines.form</field>
+        <field name="model">fdstage.lines</field>
+        <field name="arch" type="xml">
+            <form string="stage lines">
+
+
+                <field name="lines_seq"/>
+                <field name="name"/>
+                <field name="link_product" on_change="onchange_product_id(link_product, context)"/>
+                <field name="product_uom"  on_change="onchange_uom(link_product, product_uom)" groups="product.group_uom"/>
+                <field name="req_type"/>
+
+                <field name="cost_type"/>
+
+                <field name="qty" attrs="{'readonly': [('qty_readonly','=',True)]}" />
+                <field name="qty_readonly" invisible="1"/>
+
+                <!--
+                <separator string="stage lines" colspan="4"/>
+                <field name="fdstage_id"/>
+                <newline/> -->
+
+            </form>
+        </field>
+    </record>
+
+       Tree View
+
+    <record id="fdstage_lines_list_view" model="ir.ui.view">
+        <field name="name">fdstage.lines.tree</field>
+        <field name="model">fdstage.lines</field>
+        <field name="arch" type="xml">
+            <tree string="Fabric design">
+                <field name="lines_seq"/>
+                <field name="name"/>
+                <field name="link_product"/>
+                <field name="cost_type"/>
+                <field name="qty"/>
+
+            </tree>
+        </field>
+    </record>
+
+  <!--   Menu -->
+
+<record model="ir.actions.act_window" id="action_fdstage_form">
+        <field name="name">fdstage</field>
+        <field name="res_model">fdstage</field>
+
+</record>
+
+    <menuitem
+            name="Design Stage"
+            action="action_fdstage_form"
+            id="fdstage_sub_menu"
+            groups="base.group_no_one"
+            parent="fabric_menu"/>
+
+
+    <record model="ir.actions.act_window" id="action_fdstage_lines_form">
+        <field name="name">fdstage.lines</field>
+        <field name="res_model">fdstage.lines</field>
+    </record>
+
+    <menuitem
+            name="Stage Lines"
+            action="action_fdstage_lines_form"
+            id="fdstage_lines_sub_menu"
+            groups="base.group_no_one"
+            parent="fabric_menu"/>
+
+
+</data>
+</openerp>
+

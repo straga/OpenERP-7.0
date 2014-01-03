@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record id="ir_property_webkit_header_default_contract" model="ir.header_webkit">
+      <field name="name">webkit_header_default_plain</field>
+      <field name="margin_top" eval="20"/>
+      <field name="margin_left" eval="30"/>
+      <field name="margin_bottom" eval="20"/>
+      <field name="margin_right" eval="20"/>
+      <field name="format">A4</field>
+    </record>
+
+    <report
+        auto="False"
+        menu="True"
+        id="report_l10n_lv_hr_contract"
+        model="hr.contract"
+        name="hr.employee.contract"
+        string="Employee Contract"
+        file="l10n_lv_hr/report/hr_contract_report.html"
+        header="False"
+        report_type="webkit"
+        webkit_header="ir_property_webkit_header_default_contract"/>
+
+  </data>
+</openerp>

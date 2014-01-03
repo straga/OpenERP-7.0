@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FIDAVISTA xmlns="http://www.bankasoc.lv/fidavista/fidavista0101.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+	<Timestamp>2011110118171706258</Timestamp>
+	<From >POHJOLA BANK PLC LATVIA BRANCH</From>
+    </Header>
+    <Statement>
+	<Period>
+	    <StartDate>2011-09-16</StartDate>
+	    <EndDate>2011-11-01</EndDate>
+	    <PrepDate>2011-11-01</PrepDate>
+	</Period>
+	<BankSet>
+	    <Name> POHJOLA BANK PLC LATVIA BRANCH </Name>
+	    <LegalId>40103212230</LegalId>
+	    <Address> Vienibas gatve 87/2</Address>
+	</BankSet>
+	<ClientSet>
+	    <Name>Company XYZ</Name>
+	    <LegalId>123</LegalId>
+	</ClientSet>
+	<AccountSet>
+	    <AccNo> LV71OKOY0005100001616 </AccNo>
+	    <CcyStmt>
+		<Ccy>EUR</Ccy>
+		<OpenBal>5001.25</OpenBal>
+		<CloseBal>2839.36</CloseBal>
+		<TrxSet>
+		    <TypeCode>OTHR</TypeCode>
+		    <TypeName>NFEX</TypeName>
+		    <BookDate>2011-09-20</BookDate>
+		    <BankRef>204567</BankRef>
+		    <CorD>C</CorD>
+		    <AccAmt>200.26</AccAmt>
+		    <PmtInfo>Currency exchange (SPOT) EUR/LVL .7303 EUR </PmtInfo>
+		    <CPartySet>
+			<AccHolder>
+			    <Name>Pohjola Bank plc</Name>
+			</AccHolder>
+		    </CPartySet>
+		</TrxSet>
+		<TrxSet>
+		    <TypeCode>OUTP</TypeCode>
+		    <TypeName>NCRO</TypeName>
+		    <BookDate>2011-10-19</BookDate>
+		    <ExtId>1234567890</ExtId>
+		    <BankRef>20566</BankRef>
+		    <DocNo>910</DocNo>
+		    <CorD>D</CorD>
+		    <AccAmt>1000.14</AccAmt>
+		    <PmtInfo>For contract N1 dd 01.01.2011</PmtInfo>
+		    <CPartySet>
+		    	<AccNo> LT117300010036153601</AccNo>
+		    	<AccHolder>
+			    <Name>Customer ABCD</Name>
+		    	</AccHolder>
+		    	<BankCode> HABALT22</BankCode>
+		    </CPartySet>
+		</TrxSet>
+		<TrxSet>
+		    <TypeCode>OTHR</TypeCode>
+		    <TypeName> NINT </TypeName>
+		    <BookDate>2011-10-25</BookDate>
+		    <BankRef>219568</BankRef>
+		    <CorD>D</CorD>
+		    <AccAmt>1362.01</AccAmt>
+		    <PmtInfo>Loan Agreement No 123 Interest for 09.2011</PmtInfo>
+		    <CPartySet>
+			<AccHolder>
+			    <Name> Pohjola Bank plc </Name>
+			</AccHolder>
+		    </CPartySet>
+		</TrxSet>
+	    </CcyStmt>
+	</AccountSet>
+    </Statement>
+</FIDAVISTA>

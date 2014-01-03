@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+<!-- Aimax PressForm  Form View  -->
+
+        <record id="aimax_pressform_options_form_view" model="ir.ui.view">
+            <field name="name">ampf.pfoptions.form</field>
+            <field name="model">ampf.pfoptions</field>
+            <field name="arch" type="xml">
+                <form string="Print Options">
+                    <separator string="Print Options" colspan="2"/>
+                    <newline/>
+                    <field name="name"/>
+                    <newline/>
+                    <field name="descriptions"/>
+                </form>
+            </field>
+        </record>
+
+<!-- CRM PressForm  Tree View  -->
+
+        <record id="aimax_pressform_options_list_view" model="ir.ui.view">
+            <field name="name">ampf.pfoptions.tree</field>
+            <field name="model">ampf.pfoptions</field>
+            <field name="arch" type="xml">
+                <tree string="Product Categories">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+       <record id="aimax_pressform_options_act" model="ir.actions.act_window">
+            <field name="name">PressForm Print Options</field>
+            <field name="res_model">ampf.pfoptions</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="aimax_pressform_options_form_view"/>
+        </record>
+
+        <record id="aimax_pressform_options_tree-act" model="ir.actions.act_window">
+            <field name="name">PressForm Print Options</field>
+            <field name="res_model">ampf.pfoptions</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new .... 
+              </p><p>
+                Create specific categories ...
+              </p>
+            </field>
+        </record>
+        
+        <menuitem
+            groups="base.group_no_one" sequence="18"
+            id="prod_config_main"
+            name="Aimax PressForm"
+            parent="base.menu_base_config"/>
+<!--
+        <menuitem action="aimax_pressform_options_tree-act"
+            id="menu_aimax_pressform_options_act"
+            parent="prod_config_main" />
+-->        
+        <menuitem id="menu_aimax_pressform_options_act" 
+            name="Aimax" 
+            parent="base.menu_config"
+            sequence="14" 
+            action="aimax_pressform_options_tree-act"/>
+
+
+    </data>
+</openerp>

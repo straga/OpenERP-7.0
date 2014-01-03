@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--   Product Price List -->
+
+        <record id="view_vir_readings" model="ir.ui.view">
+            <field name="name">Virtual Readings</field>
+            <field name="model">mr.vir_readings</field>
+            <field name="arch" type="xml">
+                <form string="List" version="7.0">
+                    <group string="Readings">
+<!--
+                        <field colspan="2" name="price_version_id"/>
+                        <field colspan="2" name="unit_type"/>
+-->
+                    </group>
+                    <footer>
+                        <button name="add_vir_reading" string="Add"  type="object" class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- key2="client_print_multi"  it can add in act_window and can get it from Print-->
+
+        <act_window id="action_add_virtual_readings"
+                    name="Add Virtual Readings"
+                    res_model="mr.vir_readings"
+                    src_model="mr.readings"
+                    groups="product.group_sale_pricelist"
+                    view_mode="form" target="new" view_type="form" />
+
+    </data>
+</openerp>

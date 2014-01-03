@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report auto="False"
+                id="report_hr_expense_account_l10n_lv_html"
+                model="hr.expense.expense"
+                name="l10n_lv_hr_expense_account.report1"
+                file="l10n_lv_hr_expense_account/report/report_hr_expense_account.mako"
+                string="HR Expense"
+                report_type="webkit"
+				menu="False"
+                webkit_header="l10n_lv_report_webkit.ir_header_webkit_pi"/>
+
+    </data>
+</openerp>

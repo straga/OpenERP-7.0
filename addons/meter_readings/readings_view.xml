@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="mr_readings_form_view" model="ir.ui.view">
+            <field name="name">mr.readings.form</field>
+            <field name="model">mr.readings</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="MR Readings">
+
+                    <group >
+
+                        <button colspan="2"
+                                name="%(action_add_virtual_readings)d"
+                                string="Add Readings"
+                                type="action"
+                                icon="gtk-execute"
+                                class="oe_inline" />
+
+                    </group>
+
+
+                    <group>
+                        <field name="period_date_start" on_change="on_change_period_date_start(period_date_start)" />
+                        <field name="period_date_end" attrs="{'readonly': [('it_correct','=',True)]}" />
+                        <field name="value_now" on_change="on_change_value_now(value_now,value_last,it_nulled,context)" context="{'counter_id':parent.id}"/>
+                    </group>
+                    <group>
+                        <field name="it_nulled"/>
+                        <field name="it_correct"/>
+                    </group>
+                    <group>
+                        <field name="value_last" />
+                        <field name="value_diff" />
+                        <field name="name"/>
+                        <field name="period_value" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+    <!-- FiDAViSta Configuration Menu -->
+        <menuitem id="menu_fidavista_configuration" name="FiDAViSta" parent="account.menu_finance_configuration" sequence="16"/>
+
+    <!-- FiDAViSta Transaction Type Search View -->
+        <record id="account_fidavista_transaction_type_search" model="ir.ui.view">
+            <field name="name">account.fidavista.transaction.type.search</field>
+            <field name="model">account.fidavista.transaction.type</field>
+            <field name="arch" type="xml">
+            	<search string="FiDAViSta Transaction Type Search">
+                    <field name="type" string="Type"/>
+                    <field name="account_id" string="Account"/>
+            	</search>
+            </field>
+        </record>
+
+    <!-- FiDAViSta Transaction Type Tree View -->
+        <record id="account_fidavista_transaction_type_tree" model="ir.ui.view">
+            <field name="name">account.fidavista.transaction.type.tree</field>
+            <field name="model">account.fidavista.transaction.type</field>
+            <field name="arch" type="xml">
+                <tree string="FiDAViSta Transaction Type result">
+                    <field name="type"/>
+                    <field name="io"/>
+		    <field name="account_id"/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- FiDAViSta Transaction Type Form View -->
+    <record id="account_fidavista_transaction_type_form" model="ir.ui.view">
+      <field name="name">account.fidavista.transaction.type.form</field>
+      <field name="model">account.fidavista.transaction.type</field>
+      <field name="arch" type="xml">
+        <form string="FiDAViSta Transaction Types" version="7.0">
+	    <sheet>
+            	<group col="2">
+                    <field name="type"/>
+		</group>
+		<group>
+		    <group>
+                    	<field name="account_id"/>
+		    </group>
+		    <group>
+                    	<field name="io"/>
+		    </group>
+		</group>
+		<group>
+		    <field name="description"/>
+		</group>
+	    </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- FiDAViSta Transaction Type Action -->
+        <record id="action_fidavista_transaction_type_form" model="ir.actions.act_window">
+            <field name="name">Transaction Types</field>
+            <field name="res_model">account.fidavista.transaction.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="account_fidavista_transaction_type_search"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a FiDAViSta Transaction Type. 
+              </p><p>
+               	These Types will be used to select accounts and types for Bank Statement Lines, when importing a 			FiDAViSta file.
+              </p>
+   	    </field>
+        </record>
+
+    <!-- FiDAViSta Transaction Type Menu -->
+        <menuitem action="action_fidavista_transaction_type_form" id="menu_fidavista_transaction_type" parent="menu_fidavista_configuration"/>
+
+  </data> 
+</openerp>

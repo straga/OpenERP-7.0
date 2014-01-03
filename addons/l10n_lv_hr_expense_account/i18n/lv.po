@@ -1,0 +1,190 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_lv_hr_expense_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-13 08:06+0000\n"
+"PO-Revision-Date: 2013-09-13 08:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lv_hr_expense_account
+#: field:hr.expense.account.report,account_id:0
+msgid "Account"
+msgstr "Konts"
+
+#. module: l10n_lv_hr_expense_account
+#: view:hr.expense.account.report:0
+msgid "Print a report of HR Expenses"
+msgstr "Drukāt avansu norēķinu atskaiti"
+
+#. module: l10n_lv_hr_expense_account
+#: view:hr.expense.account.report:0
+msgid "Print"
+msgstr "Drukāt"
+
+#. module: l10n_lv_hr_expense_account
+#: model:ir.actions.report.xml,name:l10n_lv_hr_expense_account.report_hr_expense_account_l10n_lv_html
+#: model:ir.ui.menu,name:l10n_lv_hr_expense_account.menu_hr_expense_1_report_l10n_lv
+msgid "HR Expense"
+msgstr "Avansu norēķins"
+
+#. module: l10n_lv_hr_expense_account
+#: model:ir.actions.act_window,name:l10n_lv_hr_expense_account.action_hr_expense_report_l10n_lv_menu
+msgid "HR Expense Report"
+msgstr "Avansu norēķina atskaite"
+
+#. module: l10n_lv_hr_expense_account
+#: model:ir.ui.menu,name:l10n_lv_hr_expense_account.menu_hr_expense_report_l10_lv
+msgid "Expenses"
+msgstr "Izdevumi"
+
+#. module: l10n_lv_hr_expense_account
+#: field:hr.expense.account.report,date_to:0
+msgid "Date To"
+msgstr "Datums līdz"
+
+#. module: l10n_lv_hr_expense_account
+#: field:hr.expense.account.report,employee_id:0
+msgid "Employee"
+msgstr "Darbinieks"
+
+#. module: l10n_lv_hr_expense_account
+#: field:hr.expense.account.report,bank_statement_line_ids:0
+msgid "Bank Statement Lines"
+msgstr "Bankas dokumentu rindas"
+
+#. module: l10n_lv_hr_expense_account
+#: field:hr.expense.account.report,date_from:0
+msgid "Date From"
+msgstr "Datums no"
+
+#. module: l10n_lv_hr_expense_account
+#: view:hr.expense.account.report:0
+msgid "Period"
+msgstr "Periods"
+
+#. module: l10n_lv_hr_expense_account
+#: view:hr.expense.account.report:0
+msgid "Cancel"
+msgstr "Atcelt"
+
+#. module: l10n_lv_hr_expense_account
+#: view:hr.expense.account.report:0
+msgid "Report Options"
+msgstr "Atskaites opcijas"
+
+#. module: l10n_lv_hr_expense_account
+#: model:ir.model,name:l10n_lv_hr_expense_account.model_hr_expense_account_report
+msgid "HR Expenses Report"
+msgstr "Avansu norēķinu atskaite"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:10
+msgid "Name Surname:"
+msgstr "Vārds Uzvārds:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:11
+msgid "Identification No:"
+msgstr "Personas kods:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:12
+msgid "Department:"
+msgstr "Struktūrvienība:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:13
+msgid "Bank Account:"
+msgstr "Norēķinu konts:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:14
+msgid "Currency:"
+msgstr "Norēķinu valūta:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:16
+msgid "EXPENSE No"
+msgstr "AVANSA NORĒĶINS Nr."
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:20
+msgid "Received:"
+msgstr "Saņemts:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:63
+msgid "Spent:"
+msgstr "Izlietots:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:23
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:66
+msgid "Doc. No"
+msgstr "Dok. nr."
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:24
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:67
+msgid "Journal Entry No"
+msgstr "Gr. Nr."
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:25
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:68
+msgid "Doc. Date"
+msgstr "Dok. datums"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:26
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:69
+msgid "Justification"
+msgstr "Pamatojums"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:27
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:70
+msgid "Account"
+msgstr "Kor. konts"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:28
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:71
+msgid "Amount"
+msgstr "Summa"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:58
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:97
+msgid "Total:"
+msgstr "Kopā:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:77
+msgid "TIN "
+msgstr "PVN reģ. Nr. "
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:105
+msgid "Expense Person:"
+msgstr "Norēķinu persona:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:109
+msgid "Accountant:"
+msgstr "Grāmatvedis:"
+
+#. module: l10n_lv_hr_expense_account
+#: report:addons/l10n_lv_hr_expense_account/report/report_hr_expense_account.mako:113
+msgid "Manager:"
+msgstr "Vadītājs:"
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.normal.form.inherit.afabric01</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="account.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <label string="" colspan="2"/>
+                <field name="af_material_type" />
+                <newline/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+
+<!-- Devision -->
+
+    <record id="ext_devision_form_view" model="ir.ui.view">
+        <field name="name">ext.devision.form</field>
+        <field name="model">ext.devision</field>
+        <field name="arch" type="xml">
+            <form string="Devision">
+            <group>
+                <field name="name"/>
+                <field name="description"/>
+            </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="action_ext_devision_form">
+        <field name="name">ext.devision</field>
+        <field name="res_model">ext.devision</field>
+    </record>
+
+    <menuitem
+            name="Devison"
+            action="action_ext_devision_form"
+            id="ext_devision_sub_menu"
+            groups="base.group_no_one"
+            parent="fabric_menu"/>
+
+</data>
+</openerp>
+
